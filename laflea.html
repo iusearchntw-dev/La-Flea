@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>La Flea portal!!!:D</title>
+    <link rel="icon" href="https://cdn.wikimg.net/en/hkwiki/images/d/d2/Flea.png">
+</head>
+<body>
+
+<h1>Home</h1>
+
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('login')">Log On</button>
+<button onclick="showPage('vips')">VIPs</button>
+<button onclick="showPage('id')">Get a ID</button>
+
+<div id="homePage">
+    <p>Welcome to the site</p>
+
+    <img src="IMG-20260307-WA0010.jpg" width="200"><br><br>
+    <img src="IMG-20260307-WA0007.jpg" width="200"><br><br>
+    <img src="IMG-20260312-WA0008.jpg" width="200">
+</div>
+
+<div id="loginPage" style="display:none;">
+    <h2>Log On</h2>
+    <input type="text" id="username" placeholder="Username"><br><br>
+    <input type="password" placeholder="Password"><br><br>
+    <button onclick="login()">Log In</button>
+    <p id="result"></p>
+</div>
+
+<div id="vipsPage" style="display:none;">
+    <h2>VIPs</h2>
+    <p>liam</p>
+</div>
+
+<div id="idPage" style="display:none;">
+    <h2>Get a ID</h2>
+    <p>ask ted dumbass 072 216 33 67</p>
+</div>
+
+<script>
+function showPage(page) {
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("vipsPage").style.display = "none";
+    document.getElementById("idPage").style.display = "none";
+
+    if (page === "home") document.getElementById("homePage").style.display = "block";
+    if (page === "login") document.getElementById("loginPage").style.display = "block";
+    if (page === "vips") document.getElementById("vipsPage").style.display = "block";
+    if (page === "id") document.getElementById("idPage").style.display = "block";
+}
+
+function login() {
+    let user = document.getElementById("username").value.toLowerCase();
+    let result = document.getElementById("result");
+
+    if (user === "mio") {
+        result.innerText = "Mio.\nCitizen of La Flea.\nOwner of flea!";
+    } 
+    else if (user === "ted") {
+        result.innerText = "Ted.\nCitizen of La Flea.\nUses arch btw";
+    } 
+    else if (user === "laim" || user === "liam") {
+        result.innerText = "Liam.\nVIP member of La Flea.\nPlays God Of War i guess";
+    } 
+    else if (user === "elis") {
+        result.innerText = "Elis.\nCitizen of La Flea\nHas TF2";
+    } 
+    else {
+        result.innerText = "Invalid username";
+    }
+}
+</script>
+
+</body>
+</html>
