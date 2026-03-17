@@ -1,79 +1,418 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>La Flea portal!!!:D</title>
-    <link rel="icon" href="https://cdn.wikimg.net/en/hkwiki/images/d/d2/Flea.png">
+<title>La Flea portal!!!:D</title>
+<link rel="icon" href="https://cdn.wikimg.net/en/hkwiki/images/d/d2/Flea.png">
+<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== NEW LOOK ===== */
+body.new {
+  background: #0d0b08;
+  color: #e8dcc8;
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+}
+
+body.new::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, #3a2200 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.new .site-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+body.new .site-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #3a2e1a;
+  padding-bottom: 1.5rem;
+}
+
+body.new .site-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #f5c842;
+}
+
+body.new .site-tagline {
+  font-family: 'Syne Mono', monospace;
+  font-size: 0.72rem;
+  color: #6b5a38;
+  padding-bottom: 0.2rem;
+  letter-spacing: 0.05em;
+}
+
+body.new nav {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+body.new nav button {
+  font-family: 'Syne Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid #3a2e1a;
+  color: #a08060;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+body.new nav button:hover,
+body.new nav button.active {
+  background: #f5c842;
+  color: #0d0b08;
+  border-color: #f5c842;
+}
+
+body.new .page { display: none; animation: fadein 0.25s ease; }
+body.new .page.visible { display: block; }
+
+@keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+body.new .home-imgs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+body.new .home-imgs img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid #2a2010;
+  display: block;
+}
+
+body.new .welcome-text {
+  font-size: 0.9rem;
+  color: #7a6a50;
+  font-family: 'Syne Mono', monospace;
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+}
+
+body.new h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f5c842;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+body.new input[type=text],
+body.new input[type=password] {
+  font-family: 'Syne Mono', monospace;
+  font-size: 0.85rem;
+  background: #1a1608;
+  border: 1px solid #3a2e1a;
+  color: #e8dcc8;
+  padding: 0.6rem 0.9rem;
+  width: 100%;
+  max-width: 280px;
+  display: block;
+  margin-bottom: 0.75rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+body.new input:focus { border-color: #f5c842; }
+
+body.new .login-btn {
+  font-family: 'Syne Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #f5c842;
+  color: #0d0b08;
+  border: none;
+  padding: 0.55rem 1.4rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-top: 0.3rem;
+}
+body.new .login-btn:hover { background: #e0b030; }
+
+body.new #result {
+  margin-top: 1.2rem;
+  font-family: 'Syne Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: #c8a850;
+  background: #1a1608;
+  border: 1px solid #3a2e1a;
+  border-left: 3px solid #f5c842;
+  padding: 0.8rem 1rem;
+  max-width: 300px;
+  display: none;
+  white-space: pre-line;
+}
+body.new #result.shown { display: block; }
+
+body.new .vip-list {
+  list-style: none;
+}
+body.new .vip-list li {
+  font-family: 'Syne Mono', monospace;
+  font-size: 0.85rem;
+  color: #c8a850;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #1e1a10;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+body.new .vip-list li::before {
+  content: '★';
+  color: #f5c842;
+  font-size: 0.7rem;
+}
+
+body.new .id-text {
+  font-family: 'Syne Mono', monospace;
+  font-size: 0.85rem;
+  color: #7a6a50;
+  line-height: 1.7;
+}
+body.new .id-text strong { color: #c8a850; font-weight: 400; }
+
+body.new .toggle-btn {
+  font-family: 'Syne Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  background: transparent;
+  border: 1px solid #2a2010;
+  color: #4a3a22;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  margin-left: auto;
+  display: block;
+  margin-top: 3rem;
+  transition: color 0.15s, border-color 0.15s;
+}
+body.new .toggle-btn:hover { color: #6b5a38; border-color: #3a2e1a; }
+
+/* ===== OG LOOK ===== */
+body.og {
+  background: white;
+  color: black;
+  font-family: Times New Roman, serif;
+}
+body.og .site-wrap { padding: 8px; }
+body.og .site-header { margin-bottom: 0; border: none; padding-bottom: 0; }
+body.og .site-title { font-size: 2em; font-weight: bold; color: black; font-family: inherit; }
+body.og .site-tagline { display: none; }
+body.og nav { margin-bottom: 8px; gap: 0; }
+body.og nav button {
+  font-family: inherit;
+  font-size: 1em;
+  background: buttonface;
+  color: black;
+  border: 2px outset buttonface;
+  padding: 2px 6px;
+  cursor: pointer;
+  letter-spacing: 0;
+  text-transform: none;
+  border-radius: 0;
+}
+body.og nav button:hover, body.og nav button.active {
+  background: buttonface;
+  color: black;
+  border: 2px outset buttonface;
+}
+body.og nav button:active { border: 2px inset buttonface; }
+
+body.og .page { display: none; }
+body.og .page.visible { display: block; animation: none; }
+
+body.og .home-imgs { display: block; }
+body.og .home-imgs img {
+  width: 200px;
+  aspect-ratio: unset;
+  height: auto;
+  border: none;
+  display: block;
+  margin-bottom: 16px;
+  object-fit: unset;
+}
+
+body.og .welcome-text { font-size: 1em; color: black; font-family: inherit; letter-spacing: 0; margin-bottom: 4px; }
+body.og h2 { font-size: 1.5em; color: black; font-weight: bold; margin-bottom: 8px; letter-spacing: 0; font-family: inherit; }
+
+body.og input[type=text],
+body.og input[type=password] {
+  font-family: inherit;
+  font-size: 1em;
+  background: white;
+  border: 1px solid black;
+  color: black;
+  padding: 2px;
+  max-width: unset;
+  width: unset;
+  display: inline;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+body.og .login-btn {
+  font-family: inherit;
+  font-size: 1em;
+  background: buttonface;
+  color: black;
+  border: 2px outset buttonface;
+  padding: 2px 6px;
+  cursor: pointer;
+  border-radius: 0;
+  margin-top: 0;
+}
+
+body.og #result {
+  margin-top: 8px;
+  font-family: inherit;
+  font-size: 1em;
+  color: black;
+  background: white;
+  border: none;
+  border-left: none;
+  padding: 0;
+  max-width: unset;
+  display: none;
+  white-space: pre-line;
+}
+body.og #result.shown { display: block; }
+
+body.og .vip-list li {
+  font-family: inherit;
+  font-size: 1em;
+  color: black;
+  border-bottom: none;
+  padding: 0;
+  gap: 0;
+}
+body.og .vip-list li::before { display: none; }
+
+body.og .id-text { font-family: inherit; font-size: 1em; color: black; }
+body.og .id-text strong { color: black; font-weight: normal; }
+
+body.og .toggle-btn {
+  font-family: inherit;
+  font-size: 1em;
+  background: buttonface;
+  border: 2px outset buttonface;
+  color: black;
+  padding: 2px 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0;
+}
+
+body.og .login-form-row { display: block; }
+body.og .login-form-row br { display: block; }
+</style>
 </head>
-<body>
+<body class="new">
+<div class="site-wrap">
 
-<h1>Home</h1>
+  <header class="site-header">
+    <div>
+      <div class="site-title">La Flea</div>
+      <div class="site-tagline">members only // private portal</div>
+    </div>
+  </header>
 
-<button onclick="showPage('home')">Home</button>
-<button onclick="showPage('login')">Log On</button>
-<button onclick="showPage('vips')">VIPs</button>
-<button onclick="showPage('id')">Get a ID</button>
+  <nav>
+    <button onclick="showPage('home')" id="nav-home" class="active">Home</button>
+    <button onclick="showPage('login')" id="nav-login">Log On</button>
+    <button onclick="showPage('vips')" id="nav-vips">VIPs</button>
+    <button onclick="showPage('id')" id="nav-id">Get a ID</button>
+  </nav>
 
-<div id="homePage">
-    <p>Welcome to the site</p>
+  <div id="homePage" class="page visible">
+    <p class="welcome-text">// welcome to the site</p>
+    <div class="home-imgs">
+      <img src="IMG-20260307-WA0010.jpg" alt="">
+      <img src="IMG-20260307-WA0007.jpg" alt="">
+      <img src="IMG-20260312-WA0008.jpg" alt="">
+    </div>
+  </div>
 
-    <img src="IMG-20260307-WA0010.jpg" width="200"><br><br>
-    <img src="IMG-20260307-WA0007.jpg" width="200"><br><br>
-    <img src="IMG-20260312-WA0008.jpg" width="200">
-</div>
-
-<div id="loginPage" style="display:none;">
+  <div id="loginPage" class="page">
     <h2>Log On</h2>
-    <input type="text" id="username" placeholder="Username"><br><br>
-    <input type="password" placeholder="Password"><br><br>
-    <button onclick="login()">Log In</button>
+    <div class="login-form-row">
+      <input type="text" id="username" placeholder="username"><br>
+      <input type="password" placeholder="password"><br>
+      <button class="login-btn" onclick="login()">Log In</button>
+    </div>
     <p id="result"></p>
-</div>
+  </div>
 
-<div id="vipsPage" style="display:none;">
+  <div id="vipsPage" class="page">
     <h2>VIPs</h2>
-    <p>liam</p>
-</div>
+    <ul class="vip-list">
+      <li>liam</li>
+    </ul>
+  </div>
 
-<div id="idPage" style="display:none;">
+  <div id="idPage" class="page">
     <h2>Get a ID</h2>
-    <p>ask ted dumbass
-    </p>
+    <p class="id-text">ask <strong>ted</strong> dumbass</p>
+  </div>
+
+  <button class="toggle-btn" onclick="toggleLook()">switch to og look</button>
+
 </div>
 
 <script>
-function showPage(page) {
-    document.getElementById("homePage").style.display = "none";
-    document.getElementById("loginPage").style.display = "none";
-    document.getElementById("vipsPage").style.display = "none";
-    document.getElementById("idPage").style.display = "none";
+var isNew = true;
 
-    if (page === "home") document.getElementById("homePage").style.display = "block";
-    if (page === "login") document.getElementById("loginPage").style.display = "block";
-    if (page === "vips") document.getElementById("vipsPage").style.display = "block";
-    if (page === "id") document.getElementById("idPage").style.display = "block";
+function showPage(page) {
+  ['homePage','loginPage','vipsPage','idPage'].forEach(function(id) {
+    document.getElementById(id).classList.remove('visible');
+  });
+  ['nav-home','nav-login','nav-vips','nav-id'].forEach(function(id) {
+    document.getElementById(id).classList.remove('active');
+  });
+  document.getElementById(page + 'Page').classList.add('visible');
+  document.getElementById('nav-' + page).classList.add('active');
 }
 
 function login() {
-    let user = document.getElementById("username").value.toLowerCase();
-    let result = document.getElementById("result");
+  var user = document.getElementById('username').value.toLowerCase();
+  var result = document.getElementById('result');
+  var msgs = {
+    'mio': 'Mio.\nCitizen of La Flea.\nOwner of flea!',
+    'ted': 'Ted.\nCitizen of La Flea.\nUses arch btw',
+    'laim': 'Liam.\nVIP member of La Flea.\nPlays God Of War i guess',
+    'liam': 'Liam.\nVIP member of La Flea.\nPlays God Of War i guess',
+    'elis': 'Elis.\nCitizen of La Flea\nHas TF2'
+  };
+  result.textContent = msgs[user] || 'Invalid username';
+  result.classList.add('shown');
+}
 
-    if (user === "mio") {
-        result.innerText = "Mio.\nCitizen of La Flea.\nOwner of flea!";
-    } 
-    else if (user === "ted") {
-        result.innerText = "Ted.\nCitizen of La Flea.\nUses arch btw";
-    } 
-    else if (user === "laim" || user === "liam") {
-        result.innerText = "Liam.\nVIP member of La Flea.\nPlays God Of War i guess";
-    } 
-    else if (user === "elis") {
-        result.innerText = "Elis.\nCitizen of La Flea\nHas TF2";
-    } 
-    else {
-        result.innerText = "Invalid username";
-    }
+function toggleLook() {
+  isNew = !isNew;
+  document.body.className = isNew ? 'new' : 'og';
+  document.querySelector('.toggle-btn').textContent = isNew ? 'switch to og look' : 'switch to new look';
 }
 </script>
-
 </body>
 </html>
