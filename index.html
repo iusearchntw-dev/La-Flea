@@ -4,328 +4,176 @@
 <title>La Flea portal!!!:D</title>
 <link rel="icon" href="https://cdn.wikimg.net/en/hkwiki/images/d/d2/Flea.png">
 <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-/* ===== NEW LOOK ===== */
 body.new {
-  background: #0d0b08;
-  color: #e8dcc8;
-  font-family: 'Syne', sans-serif;
-  min-height: 100vh;
+  background: #0d0b08; color: #e8dcc8;
+  font-family: 'Syne', sans-serif; min-height: 100vh;
 }
-
 body.new::before {
-  content: '';
-  position: fixed;
-  inset: 0;
+  content: ''; position: fixed; inset: 0;
   background: radial-gradient(ellipse 80% 60% at 50% -10%, #3a2200 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 0;
+  pointer-events: none; z-index: 0;
 }
-
 body.new .site-wrap {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem 4rem;
+  position: relative; z-index: 1; max-width: 700px;
+  margin: 0 auto; padding: 1.5rem 1rem 4rem;
 }
-
 body.new .site-header {
-  display: flex;
-  align-items: flex-end;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-  border-bottom: 1px solid #3a2e1a;
-  padding-bottom: 1.5rem;
+  display: flex; align-items: flex-end; gap: 1rem;
+  margin-bottom: 1.5rem; border-bottom: 1px solid #3a2e1a; padding-bottom: 1.2rem;
 }
-
 body.new .site-title {
-  font-size: 2.8rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  color: #f5c842;
+  font-size: clamp(2rem, 8vw, 2.8rem); font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1; color: #f5c842;
 }
-
 body.new .site-tagline {
-  font-family: 'Syne Mono', monospace;
-  font-size: 0.72rem;
-  color: #6b5a38;
-  padding-bottom: 0.2rem;
-  letter-spacing: 0.05em;
+  font-family: 'Syne Mono', monospace; font-size: 0.72rem;
+  color: #6b5a38; padding-bottom: 0.2rem; letter-spacing: 0.05em;
 }
-
-body.new nav {
-  display: flex;
-  gap: 0.4rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
+body.new nav { display: flex; gap: 0.4rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
 body.new nav button {
-  font-family: 'Syne Mono', monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: transparent;
-  border: 1px solid #3a2e1a;
-  color: #a08060;
-  padding: 0.45rem 1rem;
-  cursor: pointer;
-  transition: all 0.15s;
+  font-family: 'Syne Mono', monospace; font-size: 0.75rem; letter-spacing: 0.06em;
+  text-transform: uppercase; background: transparent; border: 1px solid #3a2e1a;
+  color: #a08060; padding: 0.5rem 0.85rem; cursor: pointer; transition: all 0.15s;
+  -webkit-tap-highlight-color: transparent; touch-action: manipulation; min-height: 44px;
 }
-
-body.new nav button:hover,
-body.new nav button.active {
-  background: #f5c842;
-  color: #0d0b08;
-  border-color: #f5c842;
+body.new nav button:hover, body.new nav button.active {
+  background: #f5c842; color: #0d0b08; border-color: #f5c842;
 }
-
 body.new .page { display: none; animation: fadein 0.25s ease; }
 body.new .page.visible { display: block; }
-
-@keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-
+@keyframes fadein { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
 body.new .home-imgs {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 0.75rem;
-  margin-top: 1rem;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.6rem; margin-top: 1rem;
 }
 body.new .home-imgs img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border: 1px solid #2a2010;
-  display: block;
+  width: 100%; aspect-ratio: 1; object-fit: cover;
+  border: 1px solid #2a2010; display: block;
 }
-
 body.new .welcome-text {
-  font-size: 0.9rem;
-  color: #7a6a50;
-  font-family: 'Syne Mono', monospace;
-  letter-spacing: 0.04em;
-  margin-bottom: 1rem;
+  font-size: 0.85rem; color: #7a6a50; font-family: 'Syne Mono', monospace;
+  letter-spacing: 0.04em; margin-bottom: 1rem;
 }
-
 body.new h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #f5c842;
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.02em;
+  font-size: 1.3rem; font-weight: 700; color: #f5c842;
+  margin-bottom: 1rem; letter-spacing: -0.02em;
 }
-
-body.new input[type=text],
-body.new input[type=password] {
-  font-family: 'Syne Mono', monospace;
-  font-size: 0.85rem;
-  background: #1a1608;
-  border: 1px solid #3a2e1a;
-  color: #e8dcc8;
-  padding: 0.6rem 0.9rem;
-  width: 100%;
-  max-width: 280px;
-  display: block;
-  margin-bottom: 0.75rem;
-  outline: none;
-  transition: border-color 0.15s;
+body.new input[type=text], body.new input[type=password] {
+  font-family: 'Syne Mono', monospace; font-size: 1rem; background: #1a1608;
+  border: 1px solid #3a2e1a; color: #e8dcc8; padding: 0.65rem 0.9rem;
+  width: 100%; max-width: 300px; display: block; margin-bottom: 0.75rem;
+  outline: none; transition: border-color 0.15s; border-radius: 0; -webkit-appearance: none;
 }
 body.new input:focus { border-color: #f5c842; }
-
 body.new .login-btn {
-  font-family: 'Syne Mono', monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: #f5c842;
-  color: #0d0b08;
-  border: none;
-  padding: 0.55rem 1.4rem;
-  cursor: pointer;
-  transition: background 0.15s;
-  margin-top: 0.3rem;
+  font-family: 'Syne Mono', monospace; font-size: 0.78rem; letter-spacing: 0.1em;
+  text-transform: uppercase; background: #f5c842; color: #0d0b08; border: none;
+  padding: 0.65rem 1.4rem; cursor: pointer; transition: background 0.15s; margin-top: 0.3rem;
+  min-height: 44px; touch-action: manipulation; -webkit-tap-highlight-color: transparent;
 }
 body.new .login-btn:hover { background: #e0b030; }
-
 body.new #result {
-  margin-top: 1.2rem;
-  font-family: 'Syne Mono', monospace;
-  font-size: 0.82rem;
-  line-height: 1.8;
-  color: #c8a850;
-  background: #1a1608;
-  border: 1px solid #3a2e1a;
-  border-left: 3px solid #f5c842;
-  padding: 0.8rem 1rem;
-  max-width: 300px;
-  display: none;
-  white-space: pre-line;
+  margin-top: 1.2rem; font-family: 'Syne Mono', monospace; font-size: 0.82rem;
+  line-height: 1.8; color: #c8a850; background: #1a1608; border: 1px solid #3a2e1a;
+  border-left: 3px solid #f5c842; padding: 0.8rem 1rem; max-width: 300px;
+  display: none; white-space: pre-line;
 }
 body.new #result.shown { display: block; }
-
-body.new .vip-list {
-  list-style: none;
-}
+body.new .vip-list { list-style: none; }
 body.new .vip-list li {
-  font-family: 'Syne Mono', monospace;
-  font-size: 0.85rem;
-  color: #c8a850;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #1e1a10;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  font-family: 'Syne Mono', monospace; font-size: 0.85rem; color: #c8a850;
+  padding: 0.5rem 0; border-bottom: 1px solid #1e1a10;
+  display: flex; align-items: center; gap: 0.6rem;
 }
-body.new .vip-list li::before {
-  content: '★';
-  color: #f5c842;
-  font-size: 0.7rem;
-}
-
+body.new .vip-list li::before { content: '>>'; color: #f5c842; font-size: 0.7rem; }
 body.new .id-text {
-  font-family: 'Syne Mono', monospace;
-  font-size: 0.85rem;
-  color: #7a6a50;
-  line-height: 1.7;
+  font-family: 'Syne Mono', monospace; font-size: 0.85rem; color: #7a6a50; line-height: 1.7;
 }
 body.new .id-text strong { color: #c8a850; font-weight: 400; }
 
+/* leaks */
+body.new .leaks-warning {
+  font-family: 'Syne Mono', monospace; font-size: 0.7rem; color: #6b5a38;
+  letter-spacing: 0.06em; margin-bottom: 1.2rem; padding: 0.5rem 0.8rem;
+  border: 1px dashed #3a2e1a;
+}
+body.new .leaks-section-title {
+  font-family: 'Syne Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: #4a3a22; margin: 1.4rem 0 0.6rem;
+}
+body.new .leak-card {
+  background: #110f09; border: 1px solid #2a2010; padding: 0.65rem 0.9rem;
+  margin-bottom: 0.35rem; display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center; gap: 0.5rem;
+}
+@media (max-width: 480px) {
+  body.new .leak-card { grid-template-columns: 1fr; gap: 0.25rem; }
+}
+body.new .leak-name { font-size: 0.88rem; font-weight: 700; color: #d4b870; }
+body.new .leak-pw {
+  font-family: 'Syne Mono', monospace; font-size: 0.75rem; color: #4a6a3a;
+  letter-spacing: 0.03em; word-break: break-all;
+}
+body.new .leak-pw::before { content: 'pw: '; color: #3a2e1a; }
+body.new .leak-id {
+  font-family: 'Syne Mono', monospace; font-size: 0.7rem; color: #7a5a28;
+  background: #1e1a08; border: 1px solid #3a2e1a; padding: 0.2rem 0.5rem;
+  white-space: nowrap; justify-self: end;
+}
+body.new .leak-id::before { content: 'id: '; color: #3a2e1a; }
+
 body.new .toggle-btn {
-  font-family: 'Syne Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  background: transparent;
-  border: 1px solid #2a2010;
-  color: #4a3a22;
-  padding: 0.4rem 0.8rem;
-  cursor: pointer;
-  margin-left: auto;
-  display: block;
-  margin-top: 3rem;
-  transition: color 0.15s, border-color 0.15s;
+  font-family: 'Syne Mono', monospace; font-size: 0.7rem; letter-spacing: 0.06em;
+  background: transparent; border: 1px solid #2a2010; color: #4a3a22;
+  padding: 0.5rem 0.8rem; cursor: pointer; margin-top: 3rem; display: block;
+  transition: color 0.15s, border-color 0.15s; min-height: 44px; touch-action: manipulation;
 }
 body.new .toggle-btn:hover { color: #6b5a38; border-color: #3a2e1a; }
 
-/* ===== OG LOOK ===== */
-body.og {
-  background: white;
-  color: black;
-  font-family: Times New Roman, serif;
-}
+/* OG */
+body.og { background: white; color: black; font-family: Times New Roman, serif; }
 body.og .site-wrap { padding: 8px; }
 body.og .site-header { margin-bottom: 0; border: none; padding-bottom: 0; }
 body.og .site-title { font-size: 2em; font-weight: bold; color: black; font-family: inherit; }
 body.og .site-tagline { display: none; }
 body.og nav { margin-bottom: 8px; gap: 0; }
 body.og nav button {
-  font-family: inherit;
-  font-size: 1em;
-  background: buttonface;
-  color: black;
-  border: 2px outset buttonface;
-  padding: 2px 6px;
-  cursor: pointer;
-  letter-spacing: 0;
-  text-transform: none;
-  border-radius: 0;
+  font-family: inherit; font-size: 1em; background: buttonface; color: black;
+  border: 2px outset buttonface; padding: 2px 6px; cursor: pointer;
+  letter-spacing: 0; text-transform: none; border-radius: 0; min-height: unset;
 }
-body.og nav button:hover, body.og nav button.active {
-  background: buttonface;
-  color: black;
-  border: 2px outset buttonface;
-}
+body.og nav button:hover, body.og nav button.active { background: buttonface; color: black; border: 2px outset buttonface; }
 body.og nav button:active { border: 2px inset buttonface; }
-
 body.og .page { display: none; }
 body.og .page.visible { display: block; animation: none; }
-
 body.og .home-imgs { display: block; }
-body.og .home-imgs img {
-  width: 200px;
-  aspect-ratio: unset;
-  height: auto;
-  border: none;
-  display: block;
-  margin-bottom: 16px;
-  object-fit: unset;
-}
-
+body.og .home-imgs img { width: 200px; aspect-ratio: unset; height: auto; border: none; display: block; margin-bottom: 16px; object-fit: unset; }
 body.og .welcome-text { font-size: 1em; color: black; font-family: inherit; letter-spacing: 0; margin-bottom: 4px; }
 body.og h2 { font-size: 1.5em; color: black; font-weight: bold; margin-bottom: 8px; letter-spacing: 0; font-family: inherit; }
-
-body.og input[type=text],
-body.og input[type=password] {
-  font-family: inherit;
-  font-size: 1em;
-  background: white;
-  border: 1px solid black;
-  color: black;
-  padding: 2px;
-  max-width: unset;
-  width: unset;
-  display: inline;
-  margin-bottom: 0;
-  border-radius: 0;
+body.og input[type=text], body.og input[type=password] {
+  font-family: inherit; font-size: 1em; background: white; border: 1px solid black; color: black;
+  padding: 2px; max-width: unset; width: unset; display: inline; margin-bottom: 0; border-radius: 0;
 }
-
-body.og .login-btn {
-  font-family: inherit;
-  font-size: 1em;
-  background: buttonface;
-  color: black;
-  border: 2px outset buttonface;
-  padding: 2px 6px;
-  cursor: pointer;
-  border-radius: 0;
-  margin-top: 0;
-}
-
-body.og #result {
-  margin-top: 8px;
-  font-family: inherit;
-  font-size: 1em;
-  color: black;
-  background: white;
-  border: none;
-  border-left: none;
-  padding: 0;
-  max-width: unset;
-  display: none;
-  white-space: pre-line;
-}
+body.og .login-btn { font-family: inherit; font-size: 1em; background: buttonface; color: black; border: 2px outset buttonface; padding: 2px 6px; cursor: pointer; border-radius: 0; margin-top: 0; min-height: unset; }
+body.og #result { margin-top: 8px; font-family: inherit; font-size: 1em; color: black; background: white; border: none; border-left: none; padding: 0; max-width: unset; display: none; white-space: pre-line; }
 body.og #result.shown { display: block; }
-
-body.og .vip-list li {
-  font-family: inherit;
-  font-size: 1em;
-  color: black;
-  border-bottom: none;
-  padding: 0;
-  gap: 0;
-}
+body.og .vip-list li { font-family: inherit; font-size: 1em; color: black; border-bottom: none; padding: 0; gap: 0; }
 body.og .vip-list li::before { display: none; }
-
 body.og .id-text { font-family: inherit; font-size: 1em; color: black; }
 body.og .id-text strong { color: black; font-weight: normal; }
-
-body.og .toggle-btn {
-  font-family: inherit;
-  font-size: 1em;
-  background: buttonface;
-  border: 2px outset buttonface;
-  color: black;
-  padding: 2px 6px;
-  cursor: pointer;
-  margin-top: 8px;
-  letter-spacing: 0;
-}
-
-body.og .login-form-row { display: block; }
-body.og .login-form-row br { display: block; }
+body.og .leaks-warning { font-family: inherit; font-size: 1em; color: black; border: 1px solid black; padding: 2px 4px; margin-bottom: 4px; letter-spacing: 0; }
+body.og .leaks-section-title { font-family: inherit; font-size: 1em; font-weight: bold; color: black; letter-spacing: 0; text-transform: none; margin: 8px 0 2px; }
+body.og .leak-card { background: white; border: none; border-bottom: 1px solid #ccc; padding: 3px 0; grid-template-columns: 1fr; gap: 0; }
+body.og .leak-name { font-family: inherit; font-size: 1em; color: black; font-weight: bold; }
+body.og .leak-pw { font-family: inherit; font-size: 1em; color: black; letter-spacing: 0; }
+body.og .leak-pw::before { color: black; }
+body.og .leak-id { font-family: inherit; font-size: 1em; color: black; background: white; border: none; padding: 0; justify-self: start; }
+body.og .leak-id::before { color: black; }
+body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonface; border: 2px outset buttonface; color: black; padding: 2px 6px; cursor: pointer; margin-top: 8px; letter-spacing: 0; min-height: unset; }
 </style>
 </head>
 <body class="new">
@@ -343,6 +191,7 @@ body.og .login-form-row br { display: block; }
     <button onclick="showPage('login')" id="nav-login">Log On</button>
     <button onclick="showPage('vips')" id="nav-vips">VIPs</button>
     <button onclick="showPage('id')" id="nav-id">Get a ID</button>
+    <button onclick="showPage('leaks')" id="nav-leaks">Leaks</button>
   </nav>
 
   <div id="homePage" class="page visible">
@@ -356,11 +205,9 @@ body.og .login-form-row br { display: block; }
 
   <div id="loginPage" class="page">
     <h2>Log On</h2>
-    <div class="login-form-row">
-      <input type="text" id="username" placeholder="username"><br>
-      <input type="password" placeholder="password"><br>
-      <button class="login-btn" onclick="login()">Log In</button>
-    </div>
+    <input type="text" id="username" placeholder="username">
+    <input type="password" placeholder="password">
+    <button class="login-btn" onclick="login()">Log In</button>
     <p id="result"></p>
   </div>
 
@@ -376,35 +223,107 @@ body.og .login-form-row br { display: block; }
     <p class="id-text">ask <strong>ted</strong> dumbass</p>
   </div>
 
+  <div id="leaksPage" class="page">
+    <h2>Leaks</h2>
+    <div class="leaks-warning">!! classified data — do not share outside La Flea !!</div>
+
+    <div class="leaks-section-title">— Half-Life 2 —</div>
+    <div class="leak-card"><span class="leak-name">Gordon Freeman</span><span class="leak-pw">crowbar1998</span><span class="leak-id">freeman</span></div>
+    <div class="leak-card"><span class="leak-name">Alyx Vance</span><span class="leak-pw">dad_is_fine_trust_me</span><span class="leak-id">alyx</span></div>
+    <div class="leak-card"><span class="leak-name">G-Man</span><span class="leak-pw">riseandshine</span><span class="leak-id">gman</span></div>
+    <div class="leak-card"><span class="leak-name">Dr. Breen</span><span class="leak-pw">citadel_boss_2004</span><span class="leak-id">breen</span></div>
+    <div class="leak-card"><span class="leak-name">Barney Calhoun</span><span class="leak-pw">illbuyyouabeer</span><span class="leak-id">barney</span></div>
+    <div class="leak-card"><span class="leak-name">Eli Vance</span><span class="leak-pw">lambda_lambda_lambda</span><span class="leak-id">eli</span></div>
+    <div class="leak-card"><span class="leak-name">Dog</span><span class="leak-pw">bork</span><span class="leak-id">dog</span></div>
+    <div class="leak-card"><span class="leak-name">Judith Mossman</span><span class="leak-pw">breen_was_right</span><span class="leak-id">mossman</span></div>
+    <div class="leak-card"><span class="leak-name">Father Grigori</span><span class="leak-pw">ravenholmcalling</span><span class="leak-id">grigori</span></div>
+    <div class="leak-card"><span class="leak-name">Isaac Kleiner</span><span class="leak-pw">lamarr_where_are_you</span><span class="leak-id">kleiner</span></div>
+    <div class="leak-card"><span class="leak-name">Lamarr</span><span class="leak-pw">hissssss</span><span class="leak-id">lamarr</span></div>
+    <div class="leak-card"><span class="leak-name">Overwatch Soldier</span><span class="leak-pw">CPs4ls</span><span class="leak-id">cp_unit</span></div>
+    <div class="leak-card"><span class="leak-name">Vortigaunt</span><span class="leak-pw">the_vortessence_flows</span><span class="leak-id">vort</span></div>
+
+    <div class="leaks-section-title">— Portal 1 —</div>
+    <div class="leak-card"><span class="leak-name">Chell</span><span class="leak-pw">[no record found]</span><span class="leak-id">chell</span></div>
+    <div class="leak-card"><span class="leak-name">GLaDOS</span><span class="leak-pw">the_cake_was_real_actually</span><span class="leak-id">glados</span></div>
+    <div class="leak-card"><span class="leak-name">Companion Cube</span><span class="leak-pw">♥♥♥♥♥♥♥♥</span><span class="leak-id">cube</span></div>
+    <div class="leak-card"><span class="leak-name">Turret</span><span class="leak-pw">imdifferent</span><span class="leak-id">turret</span></div>
+    <div class="leak-card"><span class="leak-name">Defective Turret</span><span class="leak-pw">sorry_im_different</span><span class="leak-id">badturret</span></div>
+
+    <div class="leaks-section-title">— Portal 2 —</div>
+    <div class="leak-card"><span class="leak-name">Wheatley</span><span class="leak-pw">notacompleteandtotalmoron</span><span class="leak-id">wheatley</span></div>
+    <div class="leak-card"><span class="leak-name">Cave Johnson</span><span class="leak-pw">combustible_lemons_2037</span><span class="leak-id">cave</span></div>
+    <div class="leak-card"><span class="leak-name">Caroline</span><span class="leak-pw">IAmStillAlive</span><span class="leak-id">caroline</span></div>
+    <div class="leak-card"><span class="leak-name">Atlas</span><span class="leak-pw">beep</span><span class="leak-id">atlas</span></div>
+    <div class="leak-card"><span class="leak-name">P-body</span><span class="leak-pw">boop</span><span class="leak-id">pbody</span></div>
+    <div class="leak-card"><span class="leak-name">Space Core</span><span class="leak-pw">spaaaaaaace</span><span class="leak-id">spacecore</span></div>
+    <div class="leak-card"><span class="leak-name">Fact Core</span><span class="leak-pw">actually_that_is_incorrect</span><span class="leak-id">factcore</span></div>
+    <div class="leak-card"><span class="leak-name">Adventure Core</span><span class="leak-pw">riiick_im_in_danger</span><span class="leak-id">rick</span></div>
+    <div class="leak-card"><span class="leak-name">Anger Core</span><span class="leak-pw">AAAAAAAAAAAA</span><span class="leak-id">anger</span></div>
+    <div class="leak-card"><span class="leak-name">Turret Choir</span><span class="leak-pw">cara_mia_addio</span><span class="leak-id">choir</span></div>
+    <div class="leak-card"><span class="leak-name">Announcer</span><span class="leak-pw">please_remain_calm</span><span class="leak-id">announcer</span></div>
+  </div>
+
   <button class="toggle-btn" onclick="toggleLook()">switch to og look</button>
 
 </div>
-
 <script>
 var isNew = true;
+var pages = ['home','login','vips','id','leaks'];
+
+var leakUsers = {
+  'freeman':   'Gordon Freeman.\nCitizen of La Flea.\nFavourite tool: crowbar',
+  'alyx':      'Alyx Vance.\nCitizen of La Flea.\nDad is fine trust me',
+  'gman':      'G-Man.\nCitizen of La Flea.\nRise and shine',
+  'breen':     'Dr. Breen.\nCitizen of La Flea.\nActually kind of a nerd',
+  'barney':    'Barney Calhoun.\nCitizen of La Flea.\nOwes you a beer',
+  'eli':       'Eli Vance.\nCitizen of La Flea.\nLambda gang',
+  'dog':       'Dog.\nCitizen of La Flea.\nBork',
+  'mossman':   'Judith Mossman.\nCitizen of La Flea.\nSuspicious vibes',
+  'grigori':   'Father Grigori.\nCitizen of La Flea.\nWelcome to Ravenholm',
+  'kleiner':   'Isaac Kleiner.\nCitizen of La Flea.\nLamarr got out again',
+  'lamarr':    'Lamarr.\nCitizen of La Flea.\nHissssss',
+  'cp_unit':   'Overwatch Soldier.\nCitizen of La Flea.\nMove along citizen',
+  'vort':      'Vortigaunt.\nCitizen of La Flea.\nThe vortessence flows',
+  'chell':     'Chell.\nCitizen of La Flea.\nWill not speak',
+  'glados':    'GLaDOS.\nCitizen of La Flea.\nThe cake was real actually',
+  'cube':      'Companion Cube.\nCitizen of La Flea.\n♥♥♥♥♥♥♥♥',
+  'turret':    'Turret.\nCitizen of La Flea.\nI am different',
+  'badturret': 'Defective Turret.\nCitizen of La Flea.\nSorry about that',
+  'wheatley':  'Wheatley.\nCitizen of La Flea.\nGenius management system',
+  'cave':      'Cave Johnson.\nCitizen of La Flea.\nFounding member',
+  'caroline':  'Caroline.\nCitizen of La Flea.\nI am still alive',
+  'atlas':     'Atlas.\nCitizen of La Flea.\nBeep',
+  'pbody':     'P-body.\nCitizen of La Flea.\nBoop',
+  'spacecore': 'Space Core.\nCitizen of La Flea.\nSPAAAAAAAACE',
+  'factcore':  'Fact Core.\nCitizen of La Flea.\nActually that is incorrect',
+  'rick':      'Adventure Core.\nCitizen of La Flea.\nRiiick',
+  'anger':     'Anger Core.\nCitizen of La Flea.\nAAAAAAAAAAAA',
+  'choir':     'Turret Choir.\nCitizen of La Flea.\nCara mia addio',
+  'announcer': 'Announcer.\nCitizen of La Flea.\nPlease remain calm',
+};
+
+var realUsers = {
+  'mio':  'Mio.\nCitizen of La Flea.\nOwner of flea!',
+  'ted':  'Ted.\nCitizen of La Flea.\nUses arch btw',
+  'laim': 'Liam.\nVIP member of La Flea.\nPlays God Of War i guess',
+  'liam': 'Liam.\nVIP member of La Flea.\nPlays God Of War i guess',
+  'elis': 'Elis.\nCitizen of La Flea\nHas TF2',
+};
 
 function showPage(page) {
-  ['homePage','loginPage','vipsPage','idPage'].forEach(function(id) {
-    document.getElementById(id).classList.remove('visible');
+  pages.forEach(function(p) {
+    document.getElementById(p+'Page').classList.remove('visible');
+    document.getElementById('nav-'+p).classList.remove('active');
   });
-  ['nav-home','nav-login','nav-vips','nav-id'].forEach(function(id) {
-    document.getElementById(id).classList.remove('active');
-  });
-  document.getElementById(page + 'Page').classList.add('visible');
-  document.getElementById('nav-' + page).classList.add('active');
+  document.getElementById(page+'Page').classList.add('visible');
+  document.getElementById('nav-'+page).classList.add('active');
 }
 
 function login() {
-  var user = document.getElementById('username').value.toLowerCase();
+  var user = document.getElementById('username').value.toLowerCase().trim();
   var result = document.getElementById('result');
-  var msgs = {
-    'mio': 'Mio.\nCitizen of La Flea.\nOwner of flea!',
-    'ted': 'Ted.\nCitizen of La Flea.\nUses arch btw',
-    'laim': 'Liam.\nVIP member of La Flea.\nPlays God Of War i guess',
-    'liam': 'Liam.\nVIP member of La Flea.\nPlays God Of War i guess',
-    'elis': 'Elis.\nCitizen of La Flea\nHas TF2'
-  };
-  result.textContent = msgs[user] || 'Invalid username';
+  var msg = realUsers[user] || leakUsers[user] || 'Invalid username';
+  result.textContent = msg;
   result.classList.add('shown');
 }
 
