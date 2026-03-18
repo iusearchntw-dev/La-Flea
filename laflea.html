@@ -134,6 +134,43 @@ body.new .toggle-btn {
 }
 body.new .toggle-btn:hover { color: #6b5a38; border-color: #3a2e1a; }
 
+body.new #nav-news { border-color: #c0392b; color: #e05a45; position: relative; }
+body.new #nav-news::after {
+  content: ''; position: absolute; top: 6px; right: 6px;
+  width: 6px; height: 6px; background: #e05a45; border-radius: 50%;
+  animation: blink 1.2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+body.new #nav-news:hover, body.new #nav-news.active { background: #c0392b; border-color: #c0392b; color: #fff; }
+body.new #nav-news.active::after { display: none; }
+
+body.new .news-post { border: 1px solid #2a2010; background: #110f09; padding: 1.2rem 1.1rem; margin-bottom: 1rem; }
+body.new .news-post-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.9rem;
+  padding-bottom: 0.7rem; border-bottom: 1px solid #2a2010;
+}
+body.new .news-post-title { font-size: 1rem; font-weight: 700; color: #e05a45; line-height: 1.3; }
+body.new .news-post-date { font-family: 'Syne Mono', monospace; font-size: 0.68rem; color: #4a3a22; white-space: nowrap; }
+body.new .news-post-body { font-size: 0.88rem; line-height: 1.75; color: #c8b898; }
+body.new .news-post-body p { margin-bottom: 0.7rem; }
+body.new .news-post-body p:last-child { margin-bottom: 0; }
+body.new .news-post-tag {
+  font-family: 'Syne Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #703020; border: 1px solid #3a1a10;
+  padding: 0.15rem 0.5rem; margin-right: 0.4rem; display: inline-block; margin-bottom: 0.8rem;
+}
+body.og #nav-news { font-weight: bold; color: red; }
+body.og .news-post { border: 2px solid black; padding: 4px; margin-bottom: 8px; }
+body.og .news-post-header { display: block; margin-bottom: 4px; border-bottom: 1px solid black; padding-bottom: 2px; }
+body.og .news-post-title { font-size: 1.1em; font-weight: bold; color: black; font-family: inherit; }
+body.og .news-post-date { font-size: 0.9em; color: black; font-family: inherit; }
+body.og .news-post-body { font-size: 1em; color: black; font-family: inherit; line-height: 1.5; }
+body.og .news-post-body p { margin-bottom: 6px; }
+body.og .news-post-tag { font-family: inherit; font-size: 0.9em; color: red; border: none; padding: 0; text-transform: none; letter-spacing: 0; display: inline; margin-right: 4px; }
+body.new .news-post-img { width: 100%; max-width: 500px; display: block; margin: 0.8rem 0 0.9rem; border: 1px solid #3a1a10; }
+body.og .news-post-img { width: 100%; max-width: 400px; display: block; margin: 4px 0 6px; border: 2px solid black; }
+
 /* OG */
 body.og { background: white; color: black; font-family: Times New Roman, serif; }
 body.og .site-wrap { padding: 8px; }
@@ -193,6 +230,7 @@ body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonfa
     <button onclick="showPage('vips')" id="nav-vips">VIPs</button>
     <button onclick="showPage('id')" id="nav-id">Get a ID</button>
     <button onclick="showPage('leaks')" id="nav-leaks">Leaks</button>
+    <button onclick="showPage('news')" id="nav-news">News</button>
   </nav>
 
   <div id="homePage" class="page visible">
@@ -264,12 +302,217 @@ body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonfa
     <div class="leak-card"><span class="leak-name">Announcer</span><span class="leak-pw">please_remain_calm</span><span class="leak-id">announcer</span></div>
   </div>
 
+  <div id="newsPage" class="page">
+    <h2>News</h2>
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">INTEL SECURED: La Flea Spies Have Obtained EA's Secret Documents</span>
+        <span class="news-post-date">18 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">breaking</span><span class="news-post-tag">intel</span><span class="news-post-tag">spy</span>
+      <div class="news-post-body">
+        <p>La Flea can confirm that a team of highly trained Flea Spies successfully infiltrated EA headquarters last Tuesday and extracted the briefcase. The intel is in our base. It has not been dropped. It has not been returned. The Spies are safe and their disguises held the entire operation.</p>
+        <p>Among the recovered documents: internal memos confirming the gas programme is real and has been running since 2011, a spreadsheet titled "How Many Times Can We Rename Loot Boxes Before People Notice.xlsx", a slide deck called "Studio Acquisition and Dissolution Pipeline Q3-Q4", and a Post-It note that just says "add more pauses to the patent."</p>
+        <p>One Spy was briefly spotted near the server room but successfully backstabbed the security guard and walked out wearing his uniform. Another disguised themselves as an EA executive for six hours before realising they were in a meeting that was genuinely just about making games worse on purpose. They escaped before the meeting concluded.</p>
+        <p>The full intel will be reviewed by La Flea leadership and relevant findings published in future news posts. Ted is going through the spreadsheets now. He looks upset.</p>
+        <p>The briefcase is in our base. Intelligence has been secured. La Flea wins this round.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">BREAKING: EA Is Gassing Good Fleas and Turning Them Evil</span>
+        <span class="news-post-date">18 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">breaking</span>
+      <span class="news-post-tag">urgent</span>
+      <span class="news-post-tag">evil</span>
+      <div class="news-post-body">
+        <img src="ea-gas.jpg" class="news-post-img" alt="EA gassing a flea — documented evidence">
+        <p>Reliable sources inside La Flea have confirmed what many members have suspected for months: Electronic Arts (EA) has been deploying a specialised evil gas across flea communities worldwide, targeting innocent and good-natured fleas and converting them into soulless corporate agents loyal to EA's board of directors.</p>
+        <p>The gas — branded internally as "Gas™, $4.99 per canister" — is believed to be distributed through FIFA and Madden disc cases. Once inhaled, affected fleas immediately lose their moral compass, their sense of fun, and their ability to enjoy anything that cannot be monetised. Witnesses report formerly chill fleas demanding microtransactions for basic interactions, locking their friends' snacks behind a Season Pass, and axing beloved flea hangouts after two sessions because "engagement metrics were down."</p>
+        <p>This is not an accident. This is a strategy. EA has been doing this to gaming studios for decades — they acquire something good, gas everyone inside it, and extract maximum profit until the husk collapses. Now they have turned their gas on us. On La Flea. On fleas.</p>
+        <p>Ted has confirmed the threat is real. La Flea leadership is investigating. All members are advised to keep windows closed, uninstall Origin, refuse all EA Play trials, and absolutely do not scan any QR codes found on Sports titles.</p>
+        <p>La Flea will not be gassed. We do not consent to evil.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA Buys Beloved Studio, Shuts It Down 14 Months Later After Draining It For Parts</span>
+        <span class="news-post-date">15 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">ea</span><span class="news-post-tag">evil</span><span class="news-post-tag">rip</span>
+      <div class="news-post-body">
+        <p>EA has closed yet another studio it acquired, this time just 14 months after the purchase. The studio, which had built a loyal fanbase over 11 years of independent development, had its IP absorbed into EA's back catalogue, its staff let go via a Friday afternoon email, and its community forums wiped 48 hours later.</p>
+        <p>EA issued a statement thanking the team for their "incredible contributions." There was no severance announcement. The studio's final game, which had been in development for three years, has been cancelled and will never be released. The build exists on EA servers. It will not be preserved. It will be deleted.</p>
+        <p>This is the 27th studio EA has acquired and closed. There have been zero apologies.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">Microsoft Releases Windows 12: Now 40% More Ads, 60% Less Yours</span>
+        <span class="news-post-date">12 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">microslop</span><span class="news-post-tag">windows</span>
+      <div class="news-post-body">
+        <p>Microsoft has launched Windows 12, featuring a Start Menu that is 80% sponsored content, a Bing AI assistant that cannot be uninstalled, and a pop-up every 4 minutes asking if you have considered upgrading to Windows 12 Pro Plus Ultimate Insider Edition.</p>
+        <p>The taskbar now shows ads for Xbox Game Pass even when you are actively playing a game on it. Insiders say this was intentional.</p>
+        <p>Linux Mint downloads spiked 400% since the announcement. Good.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">Reminder: Linux Has Been Free and Good This Whole Time</span>
+        <span class="news-post-date">11 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">linux</span><span class="news-post-tag">based</span>
+      <div class="news-post-body">
+        <p>As corporations continue to charge money for the privilege of being advertised at, La Flea would like to remind everyone that Linux is free, has no ads, does not phone home, and will not one day decide you need a Microsoft account to open Notepad.</p>
+        <p>You own it. It does what you tell it. It does not pop up and ask you to rate your experience. It has never once suggested you upgrade to the Pro tier.</p>
+        <p>Ted uses Arch btw.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA Apologises For Last Year's Microtransactions By Announcing This Year's Microtransactions</span>
+        <span class="news-post-date">9 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">ea</span><span class="news-post-tag">evil</span><span class="news-post-tag">lol</span>
+      <div class="news-post-body">
+        <p>In a statement released Friday, EA expressed deep regret over the controversial loot box system in their previous title and made a solemn commitment to do better. The statement was 600 words long and used the phrase "our community" nine times despite EA not having meaningfully engaged with any community since 2009.</p>
+        <p>Attached to the statement was the reveal of their new "Seasons of Fortune" monetisation system, which is identical to the old system except the boxes are now called Vaults, the currency is now called Sparks, and the worst odds are now hidden behind a second confirmation screen so they're technically harder to screenshot.</p>
+        <p>The word "loot" does not appear anywhere in the announcement. The word "value" appears 17 times. The word "sorry" does not appear at all.</p>
+        <p>This is the fourth consecutive year EA has apologised for microtransactions and the fourth consecutive year they have immediately announced more microtransactions. La Flea has begun keeping a tally on the wall. It is not a small tally.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">Steam Deck Runs Everything. Still Impressive Every Single Time.</span>
+        <span class="news-post-date">7 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">linux</span><span class="news-post-tag">gaming</span>
+      <div class="news-post-body">
+        <p>A Linux-based handheld running games that were built for Windows and never intended to work on anything else continues to run them fine. Proton has once again just worked. The game launched. There were no issues. Nobody had to reboot into Windows.</p>
+        <p>This is not taken for granted here at La Flea. We remember the before times.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">Microsoft Wants You To Know Clippy Is Back. You Cannot Remove Him.</span>
+        <span class="news-post-date">5 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">microslop</span>
+      <div class="news-post-body">
+        <p>Clippy has returned as a mandatory AI sidebar in Microsoft Office. He now suggests edits you did not ask for, summarises documents you are currently reading, and periodically asks if you would like to upgrade to Copilot Pro for £18/month.</p>
+        <p>Attempts to close the sidebar result in Clippy asking "Are you sure? Here are three reasons to keep me open." One of the reasons is that he missed you.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA Kills Another Game You Paid For. Your Purchase Meant Nothing To Them.</span>
+        <span class="news-post-date">3 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">ea</span><span class="news-post-tag">evil</span><span class="news-post-tag">rip</span>
+      <div class="news-post-body">
+        <p>EA has permanently shut down the servers for a well-loved 2014 game, making all purchased copies — physical and digital, including single-player modes that never required an internet connection — completely and permanently unplayable. You cannot appeal this. You cannot get a refund. You bought a licence, not a game, and EA has decided the licence is over.</p>
+        <p>The game had a passionate modding community that was still releasing content last month. It sold 9 million copies and had a 91% positive rating on Steam. Its forums were active. People loved it. None of that mattered.</p>
+        <p>EA issued a statement calling this decision "part of our ongoing commitment to focusing on the future of our portfolio." The game will not be preserved. The code will not be released. A preservation group offered to host the servers for free. EA declined and sent a cease and desist instead.</p>
+        <p>You cannot own anything EA sells you. You are renting it until they decide to take it back. This is not an accident. This is the business model.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">KDE Plasma Looking Incredible Actually</span>
+        <span class="news-post-date">1 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">linux</span><span class="news-post-tag">good vibes</span>
+      <div class="news-post-body">
+        <p>La Flea reporters spent time this week with a freshly configured KDE Plasma desktop and can confirm it looks extremely good. Smooth animations, a sensible file manager, a taskbar that behaves exactly how you configured it, and zero upsell prompts of any kind.</p>
+        <p>Nobody asked for your email address. Nothing was synced to the cloud without consent. The whole thing was just a computer doing computer things because you asked it to. Genuinely refreshing in 2026.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">Microsoft OneDrive Installs Itself On Computers That Have Never Had Windows</span>
+        <span class="news-post-date">27 Feb 2026</span>
+      </div>
+      <span class="news-post-tag">microslop</span><span class="news-post-tag">cursed</span>
+      <div class="news-post-body">
+        <p>In what engineers are describing as "technically impressive," Microsoft's OneDrive client has been found on several Linux machines, a 2008 MacBook, and a smart fridge, none of which had ever run Windows. Investigators believe it arrived via a Windows Update on a nearby PC and simply jumped.</p>
+        <p>The fridge's owner reports OneDrive is now asking to back up the fridge's photos. The fridge does not have a camera. It is asking anyway.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA CEO Says Players Are "The Heart Of Everything We Do" While Cutting 3,000 Jobs</span>
+        <span class="news-post-date">24 Feb 2026</span>
+      </div>
+      <span class="news-post-tag">ea</span><span class="news-post-tag">evil</span><span class="news-post-tag">pr</span>
+      <div class="news-post-body">
+        <p>EA's CEO published a personal statement this week declaring that players are "the heart and soul of everything we do at EA" and that the company remains "deeply committed to delivering joy." This statement was released on the same day EA announced it was laying off 3,000 employees — roughly 10% of its total workforce.</p>
+        <p>The laid-off employees included QA testers who had worked on EA titles for over a decade, accessibility specialists, and the entire team behind a small internal experimental project that had been described internally as "the most fun thing EA has made in years." That project has been cancelled.</p>
+        <p>The statement contained no acknowledgement of the layoffs. It did contain a link to EA Play. The CEO's compensation package increased by 18% this fiscal year.</p>
+        <p>EA does not care about you. EA does not care about games. EA cares about one thing and it is not joy.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">You Can Just Install Arch Linux. It's Not That Scary. Ted Did It.</span>
+        <span class="news-post-date">20 Feb 2026</span>
+      </div>
+      <span class="news-post-tag">linux</span><span class="news-post-tag">tutorial vibes</span>
+      <div class="news-post-body">
+        <p>A growing number of La Flea members have made the switch to Arch Linux and report that it was fine, actually. Yes you have to read the wiki. Yes it takes an afternoon. No it is not harder than understanding why Windows needs to restart to finish installing a font.</p>
+        <p>You get exactly what you put in it. Nothing more, nothing less. No bloat. No telemetry. No Cortana asking what you want to do today. Ted has been on Arch for years and he is doing great.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA Files Patent For Technology That Charges You To Pause A Game</span>
+        <span class="news-post-date">17 Feb 2026</span>
+      </div>
+      <span class="news-post-tag">ea</span><span class="news-post-tag">evil</span><span class="news-post-tag">dystopia</span>
+      <div class="news-post-body">
+        <p>Documents filed with the US Patent Office last week describe a real-time monetisation system in which players may pause gameplay for free up to three times per play session. Each additional pause costs $0.99, or players may subscribe to the "Pause Pass" at $4.99/month for unlimited pauses. A separate "Premium Unpause" feature, priced at $1.49 per use, resumes the game 15% faster than the standard unpause.</p>
+        <p>The patent was filed on a Tuesday with no announcement. Nobody at EA has denied it. An EA spokesperson responded to press enquiries with the phrase "we are always exploring ways to add value for players," which is the most evil sentence a human being has ever written down.</p>
+        <p>This is where it ends if we let it. First it was cosmetic DLC. Then it was loot boxes. Then it was always-online DRM. Then it was live service games that die in 18 months. Now they want to charge you to press a button that has been free since 1985. There is no floor. There is no point at which EA will say "this is enough."</p>
+        <p>Play games on Linux. Buy from indie developers. Support preservation. Do not give EA another penny. Do not let them gas any more fleas.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+  </div>
+
   <button class="toggle-btn" onclick="toggleLook()">switch to og look</button>
 
 </div>
 <script>
 var isNew = true;
-var pages = ['home','login','vips','id','leaks'];
+var pages = ['home','login','vips','id','leaks','news'];
 
 var leakUsers = {
   'freeman':   'Gordon Freeman.\nCitizen of La Flea.\nFavourite tool: crowbar',
