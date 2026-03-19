@@ -126,6 +126,135 @@ body.new .leak-id {
 }
 body.new .leak-id::before { content: 'id: '; color: #3a2e1a; }
 
+body.new #nav-eahl {
+  border-color: #1a5a1a; color: #4a9a4a; animation: eablink 2s ease-in-out infinite;
+}
+body.new #nav-eahl:hover, body.new #nav-eahl.active {
+  background: #2a7a2a; border-color: #2a7a2a; color: #fff; animation: none;
+}
+@keyframes eablink { 0%,100%{opacity:1} 50%{opacity:0.5} }
+body.og #nav-eahl { color: green; font-weight: bold; }
+
+body.new .eahl-wrap {
+  background: #050e05;
+  border: 1px solid #1a3a1a;
+  padding: 1.2rem 1.2rem 1.5rem;
+  font-family: 'Syne Mono', monospace;
+}
+body.new .eahl-title {
+  font-size: clamp(0.75rem, 2.5vw, 0.95rem);
+  font-weight: 700;
+  color: #2a8a2a;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #1a3a1a;
+  word-break: break-word;
+}
+body.new .eahl-section {
+  margin: 1rem 0 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #3aaa3a;
+  letter-spacing: 0.05em;
+}
+body.new .eahl-body {
+  font-size: 0.78rem;
+  color: #6a9a6a;
+  line-height: 2;
+}
+body.new .eahl-body .price {
+  color: #c8a030;
+}
+body.new .eahl-body .warning {
+  color: #c03030;
+  font-weight: 700;
+}
+body.new .eahl-body .free {
+  color: #3aaa3a;
+}
+body.new .eahl-body .best {
+  color: #c8a030;
+  font-style: italic;
+}
+body.new .eahl-final {
+  margin-top: 1.2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #1a3a1a;
+  font-size: 0.78rem;
+  color: #8a3a3a;
+  line-height: 1.9;
+  font-weight: 700;
+}
+
+body.og .eahl-wrap { background: white; border: 2px solid green; padding: 8px; }
+body.og .eahl-title { font-size: 0.85em; font-weight: bold; color: black; margin-bottom: 6px; padding-bottom: 4px; border-bottom: 1px solid green; }
+body.og .eahl-section { font-size: 1em; font-weight: bold; color: black; margin: 6px 0 2px; }
+body.og .eahl-body { font-size: 0.95em; color: black; line-height: 1.7; font-family: monospace; }
+body.og .eahl-body .price { color: black; }
+body.og .eahl-body .warning { color: red; font-weight: bold; }
+body.og .eahl-body .free { color: green; }
+body.og .eahl-body .best { color: black; }
+body.og .eahl-final { color: red; font-weight: bold; font-size: 0.95em; border-top: 1px solid red; margin-top: 6px; padding-top: 4px; }
+
+/* cookie banner */
+body.new .cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  background: #0d0b08; border-top: 1px solid #3a2e1a;
+  padding: 0.9rem 1.2rem; display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 0.7rem;
+}
+body.new .cookie-text {
+  font-family: 'Syne Mono', monospace; font-size: 0.72rem;
+  color: #7a6a50; line-height: 1.6; flex: 1; min-width: 200px;
+}
+body.new .cookie-text strong { color: #c8a850; font-weight: 400; }
+body.new .cookie-btns { display: flex; gap: 0.5rem; flex-shrink: 0; }
+body.new .cookie-accept {
+  font-family: 'Syne Mono', monospace; font-size: 0.7rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  background: #f5c842; color: #0d0b08; border: none;
+  padding: 0.45rem 1rem; cursor: pointer; min-height: 36px;
+  touch-action: manipulation;
+}
+body.new .cookie-decline {
+  font-family: 'Syne Mono', monospace; font-size: 0.7rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  background: transparent; color: #4a3a22;
+  border: 1px solid #2a2010; padding: 0.45rem 1rem;
+  cursor: pointer; min-height: 36px; touch-action: manipulation;
+}
+
+/* suggestions corner */
+body.new .suggestions-corner {
+  position: fixed; top: 60px; right: 1rem; z-index: 998;
+}
+body.new .suggestions-corner button {
+  font-family: 'Syne Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  background: #0d0b08; border: 1px solid #2a2010;
+  color: #4a3a22; padding: 0.4rem 0.7rem; cursor: pointer;
+  transition: all 0.15s; min-height: 36px; touch-action: manipulation;
+}
+body.new .suggestions-corner button:hover { color: #6b5a38; border-color: #3a2e1a; }
+body.new .suggestions-bubble {
+  display: none; position: absolute; bottom: 110%; right: 0;
+  background: #110f09; border: 1px solid #3a2e1a;
+  border-bottom: none; padding: 0.7rem 0.9rem; white-space: nowrap;
+  font-family: 'Syne Mono', monospace; font-size: 0.75rem; color: #c8a850;
+}
+body.new .suggestions-corner:hover .suggestions-bubble,
+body.new .suggestions-corner.open .suggestions-bubble { display: block; }
+
+body.og .cookie-banner { background: white; border-top: 2px solid black; padding: 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
+body.og .cookie-text { font-family: inherit; font-size: 0.9em; color: black; }
+body.og .cookie-text strong { font-weight: bold; }
+body.og .cookie-btns { display: flex; gap: 4px; }
+body.og .cookie-accept { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 8px; cursor: pointer; }
+body.og .cookie-decline { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 8px; cursor: pointer; }
+body.og .suggestions-corner button { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 6px; cursor: pointer; position: fixed; top: 60px; right: 8px; }
+body.og .suggestions-bubble { font-family: inherit; font-size: 0.9em; background: lightyellow; border: 1px solid black; padding: 4px 6px; bottom: 110%; right: 0; }
+
 body.new .toggle-btn {
   font-family: 'Syne Mono', monospace; font-size: 0.7rem; letter-spacing: 0.06em;
   background: transparent; border: 1px solid #2a2010; color: #4a3a22;
@@ -133,6 +262,27 @@ body.new .toggle-btn {
   transition: color 0.15s, border-color 0.15s; min-height: 44px; touch-action: manipulation;
 }
 body.new .toggle-btn:hover { color: #6b5a38; border-color: #3a2e1a; }
+
+
+  font-family: 'Syne Mono', monospace; font-size: 0.7rem; color: #4a6a4a;
+  border: 1px dashed #1a3a1a; padding: 0.5rem 0.8rem; margin-bottom: 1.2rem; line-height: 1.7;
+}
+  font-family: 'Syne Mono', monospace; font-size: 0.85rem; background: #1a1608;
+  border: 1px solid #3a2e1a; color: #e8dcc8; padding: 0.65rem 0.9rem;
+  width: 100%; max-width: 400px; display: block; margin-bottom: 0.75rem;
+  outline: none; transition: border-color 0.15s; border-radius: 0;
+  resize: vertical; min-height: 80px;
+}
+  font-family: 'Syne Mono', monospace; font-size: 0.75rem; color: #5a8a5a;
+  margin-top: 0.5rem; min-height: 1.2rem;
+}
+  background: #110f09; border: 1px solid #2a2010; padding: 0.7rem 0.9rem;
+  margin-bottom: 0.4rem;
+}
+  font-family: 'Syne Mono', monospace; font-size: 0.7rem; color: #f5c842;
+  margin-bottom: 0.3rem;
+}
+
 
 body.new #nav-news { border-color: #c0392b; color: #e05a45; position: relative; }
 body.new #nav-news::after {
@@ -231,6 +381,7 @@ body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonfa
     <button onclick="showPage('id')" id="nav-id">Get a ID</button>
     <button onclick="showPage('leaks')" id="nav-leaks">Leaks</button>
     <button onclick="showPage('news')" id="nav-news">News</button>
+    <button onclick="showPage('eahl')" id="nav-eahl">!! EA HL !!</button>
   </nav>
 
   <div id="homePage" class="page visible">
@@ -245,7 +396,7 @@ body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonfa
   <div id="loginPage" class="page">
     <h2>Log On</h2>
     <input type="text" id="username" placeholder="username">
-    <input type="password" placeholder="password">
+    <input type="password" id="loginPass" placeholder="password">
     <button class="login-btn" onclick="login()">Log In</button>
     <p id="result"></p>
   </div>
@@ -300,10 +451,158 @@ body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonfa
     <div class="leak-card"><span class="leak-name">Anger Core</span><span class="leak-pw">AAAAAAAAAAAA</span><span class="leak-id">anger</span></div>
     <div class="leak-card"><span class="leak-name">Turret Choir</span><span class="leak-pw">cara_mia_addio</span><span class="leak-id">choir</span></div>
     <div class="leak-card"><span class="leak-name">Announcer</span><span class="leak-pw">please_remain_calm</span><span class="leak-id">announcer</span></div>
+
+    <div class="leaks-section-title">— La Flea (Real Members) —</div>
+    <div class="leak-card"><span class="leak-name">Beastling</span><span class="leak-pw">[no password required]</span><span class="leak-id">beastling</span></div>
   </div>
 
   <div id="newsPage" class="page">
     <h2>News</h2>
+    <button onclick="jumpToFirstToday()" id="firstTodayBtn" style="font-family:'Syne Mono',monospace;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;background:transparent;border:1px solid #3a2e1a;color:#a08060;padding:0.45rem 0.9rem;cursor:pointer;margin-bottom:1.2rem;transition:all 0.15s;min-height:40px;display:none;"></button>
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">HORNET HAS RETURNED. She Will Not Say Where She Went. Several EA Units Have Not.</span>
+        <span class="news-post-date">19 Mar 2026 — 17:55</span>
+      </div>
+      <span class="news-post-tag">breaking</span><span class="news-post-tag">war</span><span class="news-post-tag">hornet</span>
+      <div class="news-post-body">
+        <p>Hornet has returned to the bunker. She came back through the west entrance at approximately 17:40, said nothing to anyone, went directly to level 7 to check on the beastling, confirmed it was fine, and then sat down and ate something. This is the most she has communicated since leaving at dawn.</p>
+        <p>La Flea can confirm that six EA units who were stationed near the bunker perimeter this morning have not been seen since Hornet left. Their last reported positions were the north ridge, the east tunnel entrance, and what EA internally called "forward observation post 3." All three positions are now empty. There is no sign of a struggle at any of them. They are simply gone.</p>
+        <p>When asked what happened out there, Hornet said "it's handled." That is all she said. La Flea leadership has decided this is sufficient and has not followed up.</p>
+        <p>The EA perimeter around the bunker has pulled back by an estimated 400 metres. Scouts report the remaining units appear to be standing further away than before and not moving toward us. Intelligence suggests EA Command was notified of the missing units and issued a "reassess engagement" order shortly after. This is being interpreted as a good sign.</p>
+        <p>The beastling was asleep when Hornet checked on it. It did not wake up. Hornet stayed for a few minutes anyway.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA ATTEMPTS SECOND DOOR CRACK. FAILS. THE CODE WAS CHANGED TO "HALF-LIFE2RULES" BY TED.</span>
+        <span class="news-post-date">19 Mar 2026 — 14:10</span>
+      </div>
+      <span class="news-post-tag">war</span><span class="news-post-tag">ted</span><span class="news-post-tag">security</span>
+      <div class="news-post-body">
+        <p>EA made a second attempt to crack the bunker door code at approximately 13:50, following the decrypted plan confirming this was part of their original operation. The attempt failed. The code had been changed.</p>
+        <p>Ted changed it. He changed it to "HALF-LIFE2RULES" at 06:30 this morning without telling anyone, which is a security concern in one direction and extremely effective in another. Flea Police have asked Ted to change it to something less guessable. Ted has agreed in principle but has not done it yet because he is on chapter 8.</p>
+        <p>EA operatives were observed at the door panel for approximately 22 minutes before retreating. Bunker cameras show one of them tried "EA123," "password," and "lootbox" before giving up. None of these were correct. The camera footage has been saved and is being described internally as very funny.</p>
+        <p>The door remains locked. The bunker remains sealed. Ted is still playing Half-Life 2.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA DROPS LEAFLETS INTO BUNKER VENTS OFFERING "PEACE DEAL." DEAL REQUIRES MONTHLY SUBSCRIPTION.</span>
+        <span class="news-post-date">19 Mar 2026 — 12:30</span>
+      </div>
+      <span class="news-post-tag">war</span><span class="news-post-tag">ea</span><span class="news-post-tag">actually unbelievable</span>
+      <div class="news-post-body">
+        <p>EA has attempted diplomatic contact. At approximately 12:00, small paper leaflets were dropped through the bunker's secondary vents. The leaflets are titled "A Message of Peace from EA" and are printed on glossy card with the EA logo embossed in the corner.</p>
+        <p>The peace deal terms are as follows: La Flea agrees to cease all news publishing about EA. La Flea agrees to delete the Leaks page. La Flea agrees to subscribe to EA Play at the discounted "Conflict Resolution Rate" of €6.99/month (first month €0.99, then €14.99/month after). In return, EA will "consider" withdrawing forces from the surface, pending a quarterly review.</p>
+        <p>There is no clause about the gas. There is no clause about the two fleas who died. There is no mention of the heating sabotage, the door cracking, or the spy who was sent in and subsequently backstabbed by Ted. The final line reads: "EA values the La Flea community and looks forward to a positive future together."</p>
+        <p>La Flea's official response, issued by leadership at 12:28, was one word. It was not yes. The leaflets have been collected and will be used as kindling if the heating goes out again.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">FLEA POLICE OPEN FORMAL WAR CRIMES INVESTIGATION INTO EA. "We Are Going To Need A Bigger Board."</span>
+        <span class="news-post-date">19 Mar 2026 — 10:45</span>
+      </div>
+      <span class="news-post-tag">war</span><span class="news-post-tag">flea police</span><span class="news-post-tag">justice</span>
+      <div class="news-post-body">
+        <p>Flea Police have formally opened a war crimes investigation into EA following the publication of the decrypted plan. Detective Inspector Flea held a brief press statement at 10:30 outside the boiler room, which is still the DI's preferred location for all communications.</p>
+        <p>The charges under investigation are: coordinated gas deployment against a civilian flea population, deliberate sabotage of civilian heating infrastructure during winter, attempted forced entry into a civilian bunker, infiltration via disguised spy flea, and what the DI described as "the leaflet thing, which was honestly quite insulting."</p>
+        <p>When asked how long the investigation would take, DI Flea said "as long as it needs to." When asked if EA would cooperate, DI Flea looked at the journalist for a long moment and then went back into the boiler room.</p>
+        <p>A evidence board has been set up on level 4 of the bunker. It currently has 23 items pinned to it connected by red string. Ted has added the framed copy of the EA plan. The beastling wandered past the board this morning and was not disturbed by it, which everyone agreed was a good sign.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">2.5 MILLION FLEAS CHANT EA OUT FROM 2000M UNDERGROUND. EA CLAIMS THEY CANNOT HEAR IT. THEY CAN HEAR IT.</span>
+        <span class="news-post-date">19 Mar 2026 — 09:50</span>
+      </div>
+      <span class="news-post-tag">war</span><span class="news-post-tag">morale</span><span class="news-post-tag">loud</span>
+      <div class="news-post-body">
+        <p>At 09:30 this morning, 2,500,000 fleas across all levels of the bunker began chanting simultaneously. The chant was three words. The three words were about EA. The sound traveled up 2,000 metres of solid earth and was reportedly audible on the surface near the bunker entrance, which is currently occupied by EA forward units who have issued a statement saying they cannot hear anything and everything is fine.</p>
+        <p>Surface scouts report the EA units were visibly uncomfortable and one was seen checking his phone repeatedly. An internal EA memo leaked to La Flea News Desk — source unknown, possibly the same whistleblower from before — confirms that EA Command received an audio report from forward units and responded with the phrase "do not engage with the chanting." This has been interpreted as EA being scared of 2.5 million fleas who are warm again and have Half-Life 2.</p>
+        <p>The chanting lasted eleven minutes. It ended organically. There was a brief silence and then someone on level 12 started playing Half-Life 2 music through a speaker and everyone cheered. Ted did not organise this but is taking partial credit.</p>
+        <p>Morale is at its highest point since the war began.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">DECRYPTED: EA's Full Plan Against La Flea Has Been Decoded. It Was Drawn By Hand. It Is Bad.</span>
+        <span class="news-post-date">19 Mar 2026 — 15:22</span>
+      </div>
+      <span class="news-post-tag">breaking</span><span class="news-post-tag">intel</span><span class="news-post-tag">decrypted</span>
+      <div class="news-post-body">
+        <img src="EAplan.png" class="news-post-img" alt="EA's decrypted plan. Drawn in red pen. This is real.">
+        <p>The documents recovered from EA HQ by our Flea Spies last week have been fully decrypted. Ted handled the decryption. It took him eleven minutes. The encryption was not good. The plan, however, is worse.</p>
+        <p>The document — titled "by EA" at the top, which is not how you title a classified plan — reveals the following operation in full: EA deployed one of their own Flea Spies (circled in orange, labelled "our flea spy") carrying a gas canister directly toward the La Flea bunker. Meanwhile, a separate EA team was tasked with cracking the door code on the bunker entrance to gain access from above. The diagram clearly shows the bunker structure with a locked door labelled "DOOR" and a code panel at the top. Inside the bunker, the plan shows Hornet surrounded by La Flea members — this section is labelled "La Flea intel," meaning EA knew exactly who was in there and was trying to get to them.</p>
+        <p>This confirms the heating sabotage, the gas deployment, and the door cracking attempt were all part of a single coordinated plan to breach the bunker. The EA logo appears separately in the bottom corner simply to sign the work, because apparently whoever drew this wanted credit. One of the EA flea operatives in the diagram has been given eyelashes.</p>
+        <p>Flea Police have reviewed the document. Detective Inspector Flea described it as "the most damning piece of evidence we have received and also the most surprising in terms of production quality." Legal confirms it is admissible. Ted has framed a copy and put it next to the Half-Life 2 machine.</p>
+        <p>EA has not responded to the publication of their plan. EA did not respond when we asked if the flea with eyelashes had a name. We assume yes.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">UPDATE: Surface Declared Briefly Safe. Heating Restored. 2.5 Million Fleas Confirmed In Bunker.</span>
+        <span class="news-post-date">19 Mar 2026 — 13:45</span>
+      </div>
+      <span class="news-post-tag">update</span><span class="news-post-tag">good news</span><span class="news-post-tag">official</span>
+      <div class="news-post-body">
+        <p>La Flea leadership has issued an official surface advisory: it is currently safe to go outside, but only briefly. Short trips are permitted. Do not linger. Do not engage EA units if spotted. Come back down when you are done. The east entrance is still being watched so use the west.</p>
+        <p>In the same announcement, La Flea confirmed the full scale of the bunker operation for the first time: 2,500,000 fleas are currently sheltering at a depth of 2,000 metres below the surface. This is a bigger bunker than most members realised. Facilities include multiple residential levels, a canteen, what appears to be a small library, and the two desktop PCs running Half-Life 2 (Ted's). The beastling has its own designated safe area on level 7. It seems comfortable.</p>
+        <p>The heating has been restored. Flea Police confirmed this morning that the sabotage by "Warmth Solutions LLC" has been fully reversed following yesterday's investigation. All vents are operational. The corporate smell is gone. Current bunker temperature is a stable 19°C, up from the 4°C that claimed two fleas two nights ago. Their memorial is on level 3.</p>
+        <p>Ted has not left the Half-Life 2 machine since backstabbing the spy yesterday. He is on his second playthrough. The bunker considers this normal and healthy.</p>
+        <p>Hornet departed at dawn for the surface. Nobody saw her leave. Nobody is worried. This is just what she does.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA SPY FLEA BACKSTABBED. PERPETRATOR: TED. MOTIVE: HE WANTED TO PLAY HALF-LIFE 2.</span>
+        <span class="news-post-date">19 Mar 2026 — 11:03</span>
+      </div>
+      <span class="news-post-tag">breaking</span><span class="news-post-tag">spy</span><span class="news-post-tag">ted</span>
+      <div class="news-post-body">
+        <p>An EA spy flea who had successfully infiltrated the bunker and was using one of the desktop PCs has been backstabbed. The perpetrator is Ted. Ted has been identified, located, and spoken to. His explanation was as follows: the spy was playing Half-Life 51™ (EA Edition, Season Pass Required) on the computer, and Ted wanted to play Half-Life 2 on that computer, so Ted backstabbed him.</p>
+        <p>Ted did not report the spy to Flea Police. Ted did not alert Hornet. Ted did not raise any kind of alarm. Ted simply saw an EA spy occupying his preferred Half-Life 2 machine, produced a knife from somewhere that nobody knew he had, and handled the situation personally. The spy's disguise was later found folded neatly on the chair. Ted had apparently known for twenty minutes but was waiting for a good moment.</p>
+        <p>Half-Life 51™ (EA Edition) was found still running on the desktop. Investigators report it had reached the part where you must purchase the crowbar. The spy had not purchased the crowbar. He had been standing outside a locked door for forty minutes. This may have affected his alertness.</p>
+        <p>Flea Police have classified the incident as "resolved, actually." Hornet was informed and said "good." The Flea Police noted this was the first time she had said anything since the beastling arrived and chose not to push further.</p>
+        <p>Ted is now playing Half-Life 2. Gordon Freeman has moved rooms for the first time in fourteen hours. The bunker is doing okay.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">A BEASTLING HAS BEEN BORN.</span>
+        <span class="news-post-date">19 Mar 2026 — 09:12</span>
+      </div>
+      <span class="news-post-tag">breaking</span><span class="news-post-tag">beastling</span><span class="news-post-tag">good news</span>
+      <div class="news-post-body">
+        <img src="beastling.jpg" class="news-post-img" alt="The beastling. Hatched. In a hand. Looking around.">
+        <p>A beastling has been born. It emerged from its hard shell egg this morning — tiny, round, bug-like, with a small white mask not unlike The Knight's — and is currently sitting in someone's hand in what appears to be a field outside the bunker. It is not hostile. It has never been hostile. It does not attack. It simply exists, which right now feels like the most powerful thing in the world.</p>
+        <p>The egg was found near the outer wall during early patrol at approximately 08:50, away from the EA perimeter, completely undisturbed. The shell was hard and intact. Nobody put it there. It was simply there, and then it hatched, as beastlings do — when they are ready and not a moment before.</p>
+        <p>For those unfamiliar: beastlings are small ambient creatures, non-hostile, connected to the ecosystem around larger beast creatures. They wander, they observe, they make places feel alive. They have multiple small legs. They are associated with Hornet in ways that are not fully understood but are clearly significant. This one hatched during a siege. Make of that what you will.</p>
+        <p>Hornet was shown the photo. She did not say anything for a while. This is different from the silence she had about the heating sabotage. This was a different kind of silence. A good one. Given her known connection to beastlings, La Flea is not surprised she has not left the bunker entrance since.</p>
+        <p>La Flea has formally welcomed the beastling. It does not need an ID. It does not need a password. It is a beastling and that is enough. Ted agrees. Everyone agrees.</p>
+        <p>The two fleas who died from the cold last night would have loved to see it. This one is for them.</p>
+        <p>EA has not commented. They never comment on things that are genuinely good.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
     <div class="news-post">
       <div class="news-post-header">
         <span class="news-post-title">DEVELOPING: Bunker Heating Disrupted — EA Sabotage Suspected — Flea Police On Scene</span>
@@ -370,6 +669,81 @@ body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonfa
         <p>One Spy was briefly spotted near the server room but successfully backstabbed the security guard and walked out wearing his uniform. Another disguised themselves as an EA executive for six hours before realising they were in a meeting that was genuinely just about making games worse on purpose. They escaped before the meeting concluded.</p>
         <p>The full intel will be reviewed by La Flea leadership and relevant findings published in future news posts. Ted is going through the spreadsheets now. He looks upset.</p>
         <p>The briefcase is in our base. Intelligence has been secured. La Flea wins this round.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">LEAKED: EA Internal Design Doc — Half-Life EA™ Enhanced Monetized Experience Edition</span>
+        <span class="news-post-date">18 Mar 2026</span>
+      </div>
+      <span class="news-post-tag">leaked</span><span class="news-post-tag">intel</span><span class="news-post-tag">evil</span>
+      <div class="news-post-body">
+        <p>The following document was recovered from the EA briefcase by La Flea Spies. It is a design document for an EA-published remake of Half-Life. It is real. We wish it wasn't.</p>
+        <hr style="border:none;border-top:1px solid #2a2010;margin:0.8rem 0;">
+        <p style="font-family:'Syne Mono',monospace;font-size:0.78rem;line-height:2;color:#b0a080;">
+          <strong style="color:#e05a45;display:block;margin-bottom:0.5rem;font-size:0.9rem;">Welcome to Half-Life EA™ Enhanced Monetized Experience Edition</strong>
+          <em style="color:#7a6a50;">(Beta, Early Access, Deluxe Ultimate Premium)</em><br><br>
+          Before start, please purchase:<br>
+          &nbsp;&nbsp;• Base Game Access Pass (€4.99)<br>
+          &nbsp;&nbsp;• Train Ride DLC (€2.99)<br>
+          &nbsp;&nbsp;• Looking Around License (€1.49)<br><br>
+          If not purchased, we contact police and also disable legs.<br><br>
+          You are Gordon Freeman (included in Starter Pack, voice not included).<br>
+          You go to Black Mesa Research Facility but door is locked.<br><br>
+          To unlock door, please buy: 🔑 <strong style="color:#d4b870;">"Facility Entry Bundle" (€7.99)</strong> 🔥 BEST VALUE 🔥 <em style="color:#7a6a50;">(not actually best value)</em><br><br>
+          <strong style="color:#e8dcc8;">TRAIN SEQUENCE 🚆</strong><br>
+          To continue riding train:<br>
+          &nbsp;&nbsp;• Insert €0.99 every 10 seconds<br>
+          &nbsp;&nbsp;• Or watch 3 ads for 5 seconds of movement<br>
+          Train will stop thinking if payment not received.<br><br>
+          <strong style="color:#e8dcc8;">SCIENCE EVENT</strong><br>
+          NPC say: "Please insert crystal for experiment."<br>
+          Crystal interaction requires: 💎 Crystal Handling DLC (€3.49)<br>
+          After purchase, you push crystal.<br><br>
+          ⚠️ Resonance Cascade ACTIVATED ⚠️ <em style="color:#7a6a50;">(This event included in Season Pass only)</em><br>
+          If you do not own Season Pass, screen will blur.<br><br>
+          <strong style="color:#e8dcc8;">ALIEN INVASION 👾</strong><br>
+          Aliens from Xen appear.<br>
+          To fight aliens:<br>
+          &nbsp;&nbsp;• Crowbar Trial (3 hits free)<br>
+          &nbsp;&nbsp;• Full Crowbar License (€5.99)<br>
+          &nbsp;&nbsp;• Headcrab Removal Subscription (€1.99/month)<br>
+          If headcrab remains attached, please upgrade account.<br><br>
+          <strong style="color:#e8dcc8;">MILITARY ARRIVAL 🚁</strong><br>
+          Military AI behavior locked behind: 🎯 "Enemy Intelligence Pack" (€6.99)<br>
+          Without purchase, they just T-pose and still kill you.<br><br>
+          <strong style="color:#e8dcc8;">MYSTERY MAN</strong><br>
+          G-Man appears.<br>
+          To understand his dialogue: 🧠 "Lore Explanation Pack" (€9.99)<br>
+          Without purchase, he says: "mmmm... words... time... employment..."<br><br>
+          <strong style="color:#e8dcc8;">XEN LEVEL 🌌</strong><br>
+          Access requires: 🌌 Xen Expansion Pack (€14.99) OR 🎟️ Grind 600 hours <em style="color:#7a6a50;">(estimated)</em><br>
+          Environment textures sold separately.<br><br>
+          <strong style="color:#e8dcc8;">FINAL BOSS</strong><br>
+          Damage per bullet:<br>
+          &nbsp;&nbsp;• Base: 1<br>
+          &nbsp;&nbsp;• Premium Ammo: €0.10 per shot<br>
+          &nbsp;&nbsp;• Critical Hit Bundle: €2.99<br>
+          Boss HP scales with your wallet.<br><br>
+          <strong style="color:#e8dcc8;">ENDING CUTSCENE 🎬</strong><br>
+          G-Man offers job.<br>
+          Options: ✔ Accept Job (Free) &nbsp; ❌ Refuse Job (€19.99)<br>
+          If you refuse without payment: ACCOUNT TERMINATED + POLICE CONTACTED 🚓<br><br>
+          <strong style="color:#e8dcc8;">POST-CREDITS:</strong><br>
+          New DLC AVAILABLE:<br>
+          &nbsp;&nbsp;• Half-Life 2 (Part 1 of 7)<br>
+          &nbsp;&nbsp;• Half-Life 2 Ending (€24.99)<br>
+          &nbsp;&nbsp;• Ending Explanation (€12.99)<br><br>
+          <strong style="color:#e05a45;display:block;font-size:0.85rem;">FINAL MESSAGE:</strong>
+          Thank you for playing EA™ Half-Life Experience.<br>
+          If you enjoyed, please purchase enjoyment pack.<br>
+          If not enjoyed, please purchase enjoyment pack anyway.<br><br>
+          <strong style="color:#c0392b;font-size:0.9rem;">YOU DO NOT OWN THIS GAME. THE GAME OWNS YOU.</strong>
+        </p>
+        <hr style="border:none;border-top:1px solid #2a2010;margin:0.8rem 0;">
+        <p>The document was accompanied by a post-it note from an EA executive reading "ready for Q3." Ted has been staring at it in silence for four minutes. The fleas around the HL2 desktop have pulled closer together.</p>
         <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
       </div>
     </div>
@@ -561,12 +935,102 @@ body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonfa
     </div>
   </div>
 
+  <div id="eahlPage" class="page">
+    <div class="eahl-wrap">
+      <div class="eahl-title">Welcome to Half-Life EA™ Enhanced Monetized Experience Edition<br>(Beta, Early Access, Deluxe Ultimate Premium)</div>
+      <div class="eahl-body">Before start, please purchase:<br>
+&nbsp;• <span class="price">Base Game Access Pass (€4.99)</span><br>
+&nbsp;• <span class="price">Train Ride DLC (€2.99)</span><br>
+&nbsp;• <span class="price">Looking Around License (€1.49)</span><br>
+If not purchased, we contact police and also <span class="warning">disable legs.</span><br><br>
+You are Gordon Freeman (included in Starter Pack, voice not included).<br>
+You go to Black Mesa Research Facility but door is locked.<br>
+To unlock door, please buy: 🔑 <span class="price">"Facility Entry Bundle" (€7.99)</span> <span class="best">🔥 BEST VALUE 🔥 (not actually best value)</span></div>
+
+      <div class="eahl-section">TRAIN SEQUENCE 🚆</div>
+      <div class="eahl-body">To continue riding train:<br>
+&nbsp;• Insert <span class="price">€0.99</span> every 10 seconds<br>
+&nbsp;• Or watch 3 ads for 5 seconds of movement<br>
+Train will <span class="warning">stop thinking</span> if payment not received.</div>
+
+      <div class="eahl-section">SCIENCE EVENT</div>
+      <div class="eahl-body">NPC say: "Please insert crystal for experiment."<br>
+Crystal interaction requires: 💎 <span class="price">Crystal Handling DLC (€3.49)</span><br>
+After purchase, you push crystal.<br>
+<span class="warning">⚠️ Resonance Cascade ACTIVATED ⚠️</span> (This event included in Season Pass only)<br>
+If you do not own Season Pass, screen will blur.</div>
+
+      <div class="eahl-section">ALIEN INVASION 👾</div>
+      <div class="eahl-body">Aliens from Xen appear.<br>
+To fight aliens:<br>
+&nbsp;• Crowbar Trial (3 hits free)<br>
+&nbsp;• <span class="price">Full Crowbar License (€5.99)</span><br>
+&nbsp;• <span class="price">Headcrab Removal Subscription (€1.99/month)</span><br>
+If headcrab remains attached, please <span class="warning">upgrade account.</span></div>
+
+      <div class="eahl-section">MILITARY ARRIVAL 🚁</div>
+      <div class="eahl-body">Military AI behavior locked behind: 🎯 <span class="price">"Enemy Intelligence Pack" (€6.99)</span><br>
+Without purchase, they just T-pose and <span class="warning">still kill you.</span></div>
+
+      <div class="eahl-section">MYSTERY MAN</div>
+      <div class="eahl-body">G-Man appears.<br>
+To understand his dialogue: 🧠 <span class="price">"Lore Explanation Pack" (€9.99)</span><br>
+Without purchase, he says: <span class="best">"mmmm... words... time... employment..."</span></div>
+
+      <div class="eahl-section">XEN LEVEL 🌌</div>
+      <div class="eahl-body">Access requires: 🌌 <span class="price">Xen Expansion Pack (€14.99)</span> OR 🎟️ Grind 600 hours (estimated)<br>
+Environment textures sold separately.</div>
+
+      <div class="eahl-section">FINAL BOSS</div>
+      <div class="eahl-body">Damage per bullet:<br>
+&nbsp;• Base: 1<br>
+&nbsp;• <span class="price">Premium Ammo: €0.10 per shot</span><br>
+&nbsp;• <span class="price">Critical Hit Bundle: €2.99</span><br>
+Boss HP scales with your wallet.</div>
+
+      <div class="eahl-section">ENDING CUTSCENE 🎬</div>
+      <div class="eahl-body">G-Man offers job.<br>
+Options: ✔ <span class="free">Accept Job (Free)</span> &nbsp; ❌ <span class="price">Refuse Job (€19.99)</span><br>
+If you refuse without payment: <span class="warning">ACCOUNT TERMINATED + POLICE CONTACTED 🚓</span></div>
+
+      <div class="eahl-section">POST-CREDITS</div>
+      <div class="eahl-body">New DLC AVAILABLE:<br>
+&nbsp;• <span class="price">Half-Life 2 (Part 1 of 7)</span><br>
+&nbsp;• <span class="price">Half-Life 2 Ending (€24.99)</span><br>
+&nbsp;• <span class="price">Ending Explanation (€12.99)</span></div>
+
+      <div class="eahl-final">
+        Thank you for playing EA™ Half-Life Experience.<br>
+        If you enjoyed, please purchase enjoyment pack.<br>
+        If not enjoyed, please purchase enjoyment pack anyway.<br><br>
+        YOU DO NOT OWN THIS GAME. THE GAME OWNS YOU.
+      </div>
+    </div>
+  </div>
+
   <button class="toggle-btn" onclick="toggleLook()">switch to og look</button>
 
 </div>
 <script>
+
+function setCookie(name, val, days) {
+  var d = new Date(); d.setTime(d.getTime() + days*24*60*60*1000);
+  document.cookie = name + '=' + encodeURIComponent(val) + ';expires=' + d.toUTCString() + ';path=/';
+}
+function getCookie(name) {
+  var v = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+  return v ? decodeURIComponent(v.pop()) : '';
+}
+// restore last page on load
+window.addEventListener('load', function() {
+  var lastPage = getCookie('laflea_page');
+  var lastUser = getCookie('laflea_user');
+  if (lastUser) document.getElementById('username').value = lastUser;
+  if (lastPage && document.getElementById(lastPage + 'Page')) showPage(lastPage);
+});
+
 var isNew = true;
-var pages = ['home','login','vips','id','leaks','news'];
+var pages = ['home','login','vips','id','leaks','news','eahl'];
 
 var leakUsers = {
   'freeman':   'Gordon Freeman.\nCitizen of La Flea.\nFavourite tool: crowbar',
@@ -606,6 +1070,7 @@ var realUsers = {
   'laim': 'Liam.\nVIP member of La Flea.\nPlays God Of War i guess',
   'liam': 'Liam.\nVIP member of La Flea.\nPlays God Of War i guess',
   'elis': 'Elis.\nCitizen of La Flea\nHas TF2',
+  'beastling': 'Beastling.\nCitizen of La Flea.\nBorn during the siege.\nLevel 7 resident.\nNo password required.',
 };
 
 function showPage(page) {
@@ -615,15 +1080,128 @@ function showPage(page) {
   });
   document.getElementById(page+'Page').classList.add('visible');
   document.getElementById('nav-'+page).classList.add('active');
+  if (page === 'news') updateFirstTodayBtn();
+  setCookie('laflea_page', page, 30);
 }
 
 function login() {
   var user = document.getElementById('username').value.toLowerCase().trim();
+  var pass = document.getElementById('loginPass').value.trim();
   var result = document.getElementById('result');
+
+  if (user === 'master') {
+    if (pass !== 'key') {
+      result.innerHTML = 'Wrong password.';
+      result.classList.add('shown');
+      return;
+    }
+    var allReal = Object.keys(realUsers).filter(function(k){ return k !== 'laim'; });
+    var allLeak = Object.keys(leakUsers);
+    var realRank = {'mio':'Owner','ted':'Admin','liam':'VIP','elis':'Citizen','beastling':'Citizen (Beastling)'};
+    var lines = ['=== LA FLEA MASTER ID LIST ===', ''];
+    lines.push('-- Real Members --');
+    allReal.forEach(function(k){ lines.push('id: ' + k + '  |  ' + realUsers[k].split('\n')[0] + '  |  ' + (realRank[k]||'Citizen')); });
+    lines.push('');
+    lines.push('-- Leak IDs (HL2 / Portal) --');
+    allLeak.forEach(function(k){ lines.push('id: ' + k + '  |  ' + leakUsers[k].split('\n')[0] + '  |  Citizen'); });
+    result.style.maxWidth = '500px';
+    result.textContent = lines.join('\n');
+    result.classList.add('shown');
+    return;
+  }
+
+  setCookie('laflea_user', user, 30);
   var msg = realUsers[user] || leakUsers[user] || 'Invalid username';
   result.textContent = msg;
   result.classList.add('shown');
 }
+
+function jumpToFirstToday() {
+  var posts = document.querySelectorAll('#newsPage .news-post');
+  var today = new Date();
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var todayStr = today.getDate() + ' ' + months[today.getMonth()] + ' ' + today.getFullYear();
+  var firstToday = null;
+  posts.forEach(function(post) {
+    var dateEl = post.querySelector('.news-post-date');
+    if (dateEl && dateEl.textContent.indexOf(todayStr) !== -1) {
+      firstToday = post;
+    }
+  });
+  if (firstToday) {
+    firstToday.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function updateFirstTodayBtn() {
+  var posts = document.querySelectorAll('#newsPage .news-post');
+  var today = new Date();
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var todayStr = today.getDate() + ' ' + months[today.getMonth()] + ' ' + today.getFullYear();
+  var count = 0;
+  var earliestText = '';
+  posts.forEach(function(post) {
+    var dateEl = post.querySelector('.news-post-date');
+    if (dateEl && dateEl.textContent.indexOf(todayStr) !== -1) {
+      count++;
+      earliestText = post.querySelector('.news-post-title').textContent.trim().substring(0, 40) + '...';
+    }
+  });
+  var btn = document.getElementById('firstTodayBtn');
+  if (count > 0) {
+    btn.style.display = 'inline-block';
+    btn.textContent = 'jump to first post today (' + count + ' posts today)';
+  } else {
+    btn.style.display = 'none';
+  }
+}
+
+
+// =============================================
+// SUGGESTIONS — JSONBin.io setup
+// 1. Go to https://jsonbin.io and create a free account
+// 2. Create a new bin with initial value: {"suggestions":[]}
+// 3. Paste your Master Key and Bin ID below
+// =============================================
+var JSONBIN_KEY  = 'YOUR_MASTER_KEY_HERE';   // from Account > API Keys
+var JSONBIN_BIN  = 'YOUR_BIN_ID_HERE';       // from the bin URL
+var JSONBIN_URL  = 'https://api.jsonbin.io/v3/b/' + JSONBIN_BIN;
+
+document.addEventListener('mousemove', function(e) {
+  var btn = document.getElementById('cookieDecline');
+  if (!btn || btn.style.display === 'none') return;
+  var r = btn.getBoundingClientRect();
+  var cx = r.left + r.width/2, cy = r.top + r.height/2;
+  var dx = cx - e.clientX, dy = cy - e.clientY;
+  var dist = Math.sqrt(dx*dx + dy*dy);
+  if (dist < 80) {
+    var angle = Math.atan2(dy, dx);
+    var push = 90;
+    var nx = cx + Math.cos(angle) * push, ny = cy + Math.sin(angle) * push;
+    nx = Math.max(r.width/2, Math.min(window.innerWidth - r.width/2, nx));
+    ny = Math.max(r.height/2, Math.min(window.innerHeight - r.height/2, ny));
+    btn.style.position = 'fixed';
+    btn.style.left = (nx - r.width/2) + 'px';
+    btn.style.top = (ny - r.height/2) + 'px';
+    btn.style.margin = '0';
+  }
+});
+
+function acceptCookies() {
+  localStorage.setItem('laflea_cookies', 'yes');
+  document.getElementById('cookieBanner').style.display = 'none';
+}
+function declineCookies() {
+  document.getElementById('cookieBanner').style.display = 'none';
+}
+function toggleSuggestions() {
+  document.getElementById('suggestionsCorner').classList.toggle('open');
+}
+(function() {
+  if (localStorage.getItem('laflea_cookies')) {
+    document.getElementById('cookieBanner').style.display = 'none';
+  }
+})();
 
 function toggleLook() {
   isNew = !isNew;
@@ -631,5 +1209,22 @@ function toggleLook() {
   document.querySelector('.toggle-btn').textContent = isNew ? 'switch to og look' : 'switch to new look';
 }
 </script>
+  <!-- cookie banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-text">
+      HIIII La Flea uses cookies. Not the EA kind — these ones are <strong>free</strong> and do not track you, report you to EA, or disable your legs. They just remember that you said yes to cookies.
+    </div>
+    <div class="cookie-btns">
+      <button class="cookie-accept" onclick="acceptCookies()">Accept (free)</button>
+      <button class="cookie-decline" id="cookieDecline" onclick="declineCookies()">No thanks</button>
+    </div>
+  </div>
+
+  <!-- suggestions corner -->
+  <div class="suggestions-corner" id="suggestionsCorner">
+    <div class="suggestions-bubble">suggestions? ask ted</div>
+    <button onclick="toggleSuggestions()">suggestions</button>
+  </div>
+
 </body>
 </html>
