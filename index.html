@@ -243,7 +243,6 @@ body.new .suggestions-bubble {
   border-bottom: none; padding: 0.7rem 0.9rem; white-space: nowrap;
   font-family: 'Syne Mono', monospace; font-size: 0.75rem; color: #c8a850;
 }
-body.new .suggestions-corner:hover .suggestions-bubble,
 body.new .suggestions-corner.open .suggestions-bubble { display: block; }
 
 body.og .cookie-banner { background: white; border-top: 2px solid black; padding: 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
@@ -252,8 +251,9 @@ body.og .cookie-text strong { font-weight: bold; }
 body.og .cookie-btns { display: flex; gap: 4px; }
 body.og .cookie-accept { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 8px; cursor: pointer; }
 body.og .cookie-decline { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 8px; cursor: pointer; }
-body.og .suggestions-corner button { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 6px; cursor: pointer; position: fixed; top: 60px; right: 8px; }
-body.og .suggestions-bubble { font-family: inherit; font-size: 0.9em; background: lightyellow; border: 1px solid black; padding: 4px 6px; bottom: 110%; right: 0; }
+body.og .suggestions-corner { position: fixed; top: 60px; right: 8px; z-index: 998; width: auto; }
+body.og .suggestions-corner button { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 6px; cursor: pointer; display: block; }
+body.og .suggestions-bubble { font-family: inherit; font-size: 0.9em; background: lightyellow; border: 1px solid black; padding: 4px 6px; position: absolute; bottom: 110%; right: 0; white-space: nowrap; width: auto; }
 
 body.new .toggle-btn {
   font-family: 'Syne Mono', monospace; font-size: 0.7rem; letter-spacing: 0.06em;
@@ -284,15 +284,11 @@ body.new .toggle-btn:hover { color: #6b5a38; border-color: #3a2e1a; }
 }
 
 
-body.new #nav-news { border-color: #c0392b; color: #e05a45; position: relative; }
-body.new #nav-news::after {
-  content: ''; position: absolute; top: 6px; right: 6px;
-  width: 6px; height: 6px; background: #e05a45; border-radius: 50%;
-  animation: blink 1.2s ease-in-out infinite;
-}
+body.new #nav-news { border-color: #c0392b; color: #e05a45; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
 body.new #nav-news:hover, body.new #nav-news.active { background: #c0392b; border-color: #c0392b; color: #fff; }
-body.new #nav-news.active::after { display: none; }
+body.new #nav-news .news-dot { display:inline-block; width:6px; height:6px; background:#e05a45; border-radius:50%; margin-left:5px; vertical-align:middle; animation:blink 1.2s ease-in-out infinite; }
+body.new #nav-news.active .news-dot { display:none; }
 
 body.new .news-post { border: 1px solid #2a2010; background: #110f09; padding: 1.2rem 1.1rem; margin-bottom: 1rem; }
 body.new .news-post-header {
@@ -380,7 +376,7 @@ body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonfa
     <button onclick="showPage('vips')" id="nav-vips">VIPs</button>
     <button onclick="showPage('id')" id="nav-id">Get a ID</button>
     <button onclick="showPage('leaks')" id="nav-leaks">Leaks</button>
-    <button onclick="showPage('news')" id="nav-news">News</button>
+    <button onclick="showPage('news')" id="nav-news">News<span class="news-dot"></span></button>
     <button onclick="showPage('eahl')" id="nav-eahl">!! EA HL !!</button>
   </nav>
 
