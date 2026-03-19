@@ -255,6 +255,24 @@ body.og .suggestions-corner { position: fixed; top: 60px; right: 8px; z-index: 9
 body.og .suggestions-corner button { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 6px; cursor: pointer; display: block; }
 body.og .suggestions-bubble { font-family: inherit; font-size: 0.9em; background: lightyellow; border: 1px solid black; padding: 4px 6px; position: absolute; bottom: 110%; right: 0; white-space: nowrap; width: auto; }
 
+/* dvd screensaver */
+#dvdOverlay {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: #000; cursor: pointer;
+}
+#dvdOverlay .dvd-logo {
+  position: absolute;
+  font-family: 'Syne', sans-serif; font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: 800; letter-spacing: -0.03em;
+  white-space: nowrap; user-select: none;
+  transition: color 0.1s;
+}
+#dvdOverlay .dvd-hint {
+  position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%);
+  font-family: 'Syne Mono', monospace; font-size: 0.65rem;
+  color: #333; letter-spacing: 0.1em; text-transform: uppercase;
+  pointer-events: none;
+}
 body.new .toggle-btn {
   font-family: 'Syne Mono', monospace; font-size: 0.7rem; letter-spacing: 0.06em;
   background: transparent; border: 1px solid #2a2010; color: #4a3a22;
@@ -365,7 +383,7 @@ body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonfa
 
   <header class="site-header">
     <div>
-      <div class="site-title">La Flea</div>
+      <div class="site-title" id="siteTitle" onclick="startDVD()" style="cursor:pointer;" title="click me">La Flea</div>
       <div class="site-tagline">members only // private portal</div>
     </div>
   </header>
@@ -1200,12 +1218,78 @@ function toggleSuggestions() {
   }
 })();
 
+(function() {
+  var ua = navigator.userAgent || '';
+  if (/Kindle|Silk|KFTT|KFOT|KFJWI|KFJWA|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|KFARWI|KFASWI|KFASWI|KFMEWI|KFGIWI|KFSAWI|KFMAWI|KFTBWI|KFAPWA/i.test(ua)) {
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.className = 'og';
+      var btn = document.querySelector('.toggle-btn');
+      if (btn) btn.textContent = 'switch to new look';
+      isNew = false;
+    });
+  }
+})();
+
+var dvdRAF = null;
+var dvdCornerFlash = false;
+
+function startDVD() {
+  var overlay = document.getElementById('dvdOverlay');
+  var logo = document.getElementById('dvdLogo');
+  overlay.style.display = 'block';
+  var colors = ['#f5c842','#e05a45','#4a9a4a','#5a8aee','#cc55cc','#ee8833','#44cccc','#ffffff'];
+  var ci = 0;
+  logo.style.color = colors[ci];
+
+  var x = Math.random() * (window.innerWidth - logo.offsetWidth - 20) + 10;
+  var y = Math.random() * (window.innerHeight - logo.offsetHeight - 20) + 10;
+  var vx = (Math.random() > 0.5 ? 1 : -1) * (2.5 + Math.random() * 1.5);
+  var vy = (Math.random() > 0.5 ? 1 : -1) * (2.5 + Math.random() * 1.5);
+
+  function step() {
+    var w = logo.offsetWidth, h = logo.offsetHeight;
+    var maxX = window.innerWidth - w, maxY = window.innerHeight - h;
+    var hitCorner = false;
+    x += vx; y += vy;
+    var hitX = false, hitY = false;
+    if (x <= 0) { x = 0; vx = Math.abs(vx); hitX = true; }
+    if (x >= maxX) { x = maxX; vx = -Math.abs(vx); hitX = true; }
+    if (y <= 0) { y = 0; vy = Math.abs(vy); hitY = true; }
+    if (y >= maxY) { y = maxY; vy = -Math.abs(vy); hitY = true; }
+    if (hitX && hitY) hitCorner = true;
+    if (hitX || hitY) {
+      ci = (ci + 1) % colors.length;
+      logo.style.color = colors[ci];
+      if (hitCorner) {
+        logo.style.textShadow = '0 0 30px ' + colors[ci] + ', 0 0 60px ' + colors[ci];
+        setTimeout(function(){ logo.style.textShadow = 'none'; }, 400);
+      }
+    }
+    logo.style.left = x + 'px';
+    logo.style.top = y + 'px';
+    dvdRAF = requestAnimationFrame(step);
+  }
+  dvdRAF = requestAnimationFrame(step);
+}
+
+function stopDVD() {
+  document.getElementById('dvdOverlay').style.display = 'none';
+  if (dvdRAF) { cancelAnimationFrame(dvdRAF); dvdRAF = null; }
+  document.getElementById('dvdLogo').style.textShadow = 'none';
+}
+
 function toggleLook() {
   isNew = !isNew;
   document.body.className = isNew ? 'new' : 'og';
   document.querySelector('.toggle-btn').textContent = isNew ? 'switch to og look' : 'switch to new look';
 }
 </script>
+  <!-- dvd screensaver -->
+  <div id="dvdOverlay" onclick="stopDVD()">
+    <div class="dvd-logo" id="dvdLogo">La Flea</div>
+    <div class="dvd-hint">click anywhere to exit</div>
+  </div>
+
   <!-- cookie banner -->
   <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-text">
