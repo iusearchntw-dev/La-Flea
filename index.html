@@ -227,16 +227,16 @@ body.new .cookie-decline {
 
 /* suggestions corner */
 body.new .suggestions-corner {
-  position: fixed; top: 60px; right: 1rem; z-index: 998;
+  position: relative; top: auto; right: auto; z-index: 998;
 }
 body.new .suggestions-corner button {
   font-family: 'Syne Mono', monospace; font-size: 0.65rem;
   letter-spacing: 0.06em; text-transform: uppercase;
-  background: #0d0b08; border: 1px solid #2a2010;
-  color: #4a3a22; padding: 0.4rem 0.7rem; cursor: pointer;
+  background: #0d0b08; border: 1px solid #5a4a2a;
+  color: #8a7050; padding: 0.4rem 0.7rem; cursor: pointer;
   transition: all 0.15s; min-height: 36px; touch-action: manipulation;
 }
-body.new .suggestions-corner button:hover { color: #6b5a38; border-color: #3a2e1a; }
+body.new .suggestions-corner button:hover { color: #c8a850; border-color: #8a6a30; }
 body.new .suggestions-bubble {
   display: none; position: absolute; bottom: 110%; right: 0;
   background: #110f09; border: 1px solid #3a2e1a;
@@ -252,7 +252,7 @@ body.og .cookie-btns { display: flex; gap: 4px; }
 body.og .cookie-accept { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 8px; cursor: pointer; }
 body.og .cookie-decline { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 8px; cursor: pointer; }
 body.og .suggestions-corner { position: fixed; top: 60px; right: 8px; z-index: 998; width: auto; }
-body.og .suggestions-corner button { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 6px; cursor: pointer; display: block; }
+body.og .suggestions-corner button { font-family: inherit; font-size: 0.9em; background: #e0e0e0; border: 2px solid #888; color: black; padding: 2px 8px; cursor: pointer; display: block; }
 body.og .suggestions-bubble { font-family: inherit; font-size: 0.9em; background: lightyellow; border: 1px solid black; padding: 4px 6px; position: absolute; bottom: 110%; right: 0; white-space: nowrap; width: auto; }
 
 #dvdOverlay {
@@ -284,11 +284,11 @@ body.og .suggestions-bubble { font-family: inherit; font-size: 0.9em; background
 }
 body.new .toggle-btn {
   font-family: 'Syne Mono', monospace; font-size: 0.7rem; letter-spacing: 0.06em;
-  background: transparent; border: 1px solid #2a2010; color: #4a3a22;
+  background: transparent; border: 1px solid #5a4a2a; color: #8a7050;
   padding: 0.5rem 0.8rem; cursor: pointer; margin-top: 3rem; display: block;
   transition: color 0.15s, border-color 0.15s; min-height: 44px; touch-action: manipulation;
 }
-body.new .toggle-btn:hover { color: #6b5a38; border-color: #3a2e1a; }
+body.new .toggle-btn:hover { color: #c8a850; border-color: #8a6a30; }
 
 
   font-family: 'Syne Mono', monospace; font-size: 0.7rem; color: #4a6a4a;
@@ -384,7 +384,7 @@ body.og .leak-pw { font-family: inherit; font-size: 1em; color: black; letter-sp
 body.og .leak-pw::before { color: black; }
 body.og .leak-id { font-family: inherit; font-size: 1em; color: black; background: white; border: none; padding: 0; justify-self: start; }
 body.og .leak-id::before { color: black; }
-body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonface; border: 2px outset buttonface; color: black; padding: 2px 6px; cursor: pointer; margin-top: 8px; letter-spacing: 0; min-height: unset; }
+body.og .toggle-btn { font-family: inherit; font-size: 1em; background: #e0e0e0; border: 2px solid #888; color: black; padding: 2px 8px; cursor: pointer; margin-top: 8px; letter-spacing: 0; min-height: unset; }
 
 /* ===== OLD DEVICE (3GS / iOS 6) ===== */
 body.old-device { background: #0d0b08 !important; color: #e8dcc8 !important; font-family: Georgia, serif !important; }
@@ -589,9 +589,10 @@ body.old-device #firstTodayBtn { font-family: monospace !important; font-size: 0
         <img src="grub.jpg" class="news-post-img" alt="Grub. Found. Distressed but okay.">
         <p>During planned expansion works on the La Flea bunker at approximately 18:00 today, excavation crews broke through a previously unknown chamber at 4,744 metres depth. Inside, they found a Grub. He was sealed inside a large glass jar. He was visibly distressed. He is out of the jar now.</p>
         <p>The jar was intact when found — no cracks, no label, no explanation of how it got there or how long he had been inside. The glass was old. The Grub was not happy. Crews report he made a sound when the jar was opened. Everyone present agrees it was a very sad sound and that nobody is going to forget it.</p>
+        <p>His eyes are gone. We do not know when this happened. We do not know how. The sockets are there. The eyes are not. La Flea medical staff have been informed. Nobody knows what to say about this. We are not going to pretend it is not deeply upsetting because it is deeply upsetting.</p>
         <p>The Grub has been brought up to level 7 and introduced to the beastling. The beastling looked at him for a while. The Grub looked back. Nobody is sure what this means but it seemed okay. Hornet saw the Grub and went very still for a moment in the way she goes still when something matters. She did not say anything. She sat nearby.</p>
         <p>Excavation crews are now checking whether there are more jars. The thought that there might be more jars is not a comfortable one. The tunnel at 4,744 metres has been marked as a priority search zone. Nobody is going home until the whole depth has been checked.</p>
-        <p>The jar has been confiscated by Flea Police as evidence. They have not yet determined who put a Grub in a jar at 4,744 metres underground and sealed it. They have, however, added a new item to the war crimes board. It is a drawing of a jar. There is now red string connecting it to EA. This has not been confirmed. It has also not been ruled out.</p>
+        <p>The jar has been confiscated by Flea Police as evidence. They have not yet determined who put a Grub in a jar at 4,744 metres underground, took his eyes, and sealed it. There are now two new items on the war crimes board: a drawing of a jar and the word EYES in capital letters with a question mark. Both are connected to EA by red string. This has not been confirmed. It has also not been ruled out. DI Flea looked at the board for a long time before going back into the boiler room.</p>
         <p>The Grub is safe. He has been given something to eat. He is on level 7. The beastling is next to him. This is the most important thing.</p>
         <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
       </div>
@@ -1328,7 +1329,6 @@ If you refuse without payment: <span class="warning">ACCOUNT TERMINATED + POLICE
     </div>
   </div>
 
-  <button class="toggle-btn" onclick="toggleLook()">switch to og look</button>
 
 </div>
 <script>
@@ -1617,9 +1617,12 @@ function toggleLook() {
   </div>
 
   <!-- suggestions corner -->
-  <div class="suggestions-corner" id="suggestionsCorner">
-    <div class="suggestions-bubble">suggestions? ask ted</div>
-    <button onclick="toggleSuggestions()">suggestions</button>
+  <div id="cornerBtns" style="position:fixed;bottom:1rem;right:1rem;z-index:998;display:flex;flex-direction:column;align-items:flex-end;gap:0.4rem;">
+    <div class="suggestions-corner" id="suggestionsCorner" style="position:relative;top:auto;right:auto;">
+      <div class="suggestions-bubble">suggestions? ask ted</div>
+      <button onclick="toggleSuggestions()">suggestions</button>
+    </div>
+    <button class="toggle-btn" onclick="toggleLook()" style="margin:0;">switch to og look</button>
   </div>
 
 </body>
