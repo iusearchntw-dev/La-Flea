@@ -245,15 +245,75 @@ body.new .suggestions-bubble {
 }
 body.new .suggestions-corner.open .suggestions-bubble { display: block; }
 
-body.og .cookie-banner { background: white; border-top: 2px solid black; padding: 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
-body.og .cookie-text { font-family: inherit; font-size: 0.9em; color: black; }
+body.og .cookie-banner { background: #c0c0c0; border-top: 2px solid #808080; padding: 4px 6px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
+body.og .cookie-text { font-family: "MS Sans Serif", Arial, sans-serif; font-size: 11px; color: black; }
 body.og .cookie-text strong { font-weight: bold; }
 body.og .cookie-btns { display: flex; gap: 4px; }
-body.og .cookie-accept { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 8px; cursor: pointer; }
-body.og .cookie-decline { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 8px; cursor: pointer; }
-body.og .suggestions-corner { position: fixed; top: 60px; right: 8px; z-index: 998; width: auto; }
-body.og .suggestions-corner button { font-family: inherit; font-size: 0.9em; background: buttonface; border: 2px outset buttonface; padding: 2px 6px; cursor: pointer; display: block; }
-body.og .suggestions-bubble { font-family: inherit; font-size: 0.9em; background: lightyellow; border: 1px solid black; padding: 4px 6px; position: absolute; bottom: 110%; right: 0; white-space: nowrap; width: auto; }
+body.og .cookie-accept { font-family: "MS Sans Serif", Arial, sans-serif; font-size: 11px; background: #c0c0c0; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #808080; border-bottom: 2px solid #808080; padding: 2px 10px; cursor: pointer; }
+body.og .cookie-decline { font-family: "MS Sans Serif", Arial, sans-serif; font-size: 11px; background: #c0c0c0; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #808080; border-bottom: 2px solid #808080; padding: 2px 10px; cursor: pointer; }
+body.og .suggestions-corner { position: fixed; top: 4px; right: 4px; z-index: 998; width: auto; }
+body.og .suggestions-corner button { font-family: "MS Sans Serif", Arial, sans-serif; font-size: 10px; background: #c0c0c0; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #808080; border-bottom: 2px solid #808080; padding: 2px 6px; cursor: pointer; display: block; }
+body.og .suggestions-bubble { font-family: "MS Sans Serif", Arial, sans-serif; font-size: 10px; background: #ffffe1; border: 1px solid black; padding: 3px 6px; position: absolute; bottom: 110%; right: 0; white-space: nowrap; width: auto; }
+
+
+/* Win98 taskbar */
+body.og #win98taskbar {
+  position: fixed; bottom: 0; left: 0; right: 0; height: 36px; z-index: 9000;
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  display: flex; align-items: center; gap: 2px; padding: 2px 4px;
+}
+body.og #win98taskbar .tb-start {
+  font-family: "MS Sans Serif", Arial, sans-serif; font-size: 12px; font-weight: bold;
+  background: #c0c0c0; color: black;
+  border-top: 2px solid #ffffff; border-left: 2px solid #ffffff;
+  border-right: 2px solid #808080; border-bottom: 2px solid #808080;
+  padding: 2px 8px; cursor: pointer; display: flex; align-items: center; gap: 4px;
+  height: 26px;
+}
+body.og #win98taskbar .tb-start:active { border-top: 2px solid #808080; border-left: 2px solid #808080; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; }
+body.og #win98taskbar .tb-divider { width: 2px; background: #808080; height: 24px; margin: 0 3px; border-right: 1px solid #ffffff; }
+body.og #win98taskbar .tb-window {
+  font-family: "MS Sans Serif", Arial, sans-serif; font-size: 11px;
+  background: #c0c0c0; color: black;
+  border-top: 2px solid #808080; border-left: 2px solid #808080;
+  border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff;
+  padding: 2px 10px; cursor: pointer; height: 26px; display: flex; align-items: center;
+  min-width: 100px; max-width: 150px;
+}
+body.og #win98taskbar .tb-clock {
+  margin-left: auto; font-family: "MS Sans Serif", Arial, sans-serif; font-size: 11px;
+  color: black; padding: 2px 8px; border-top: 2px solid #808080; border-left: 2px solid #808080;
+  border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff;
+  background: #c0c0c0; min-width: 50px; text-align: center;
+}
+body.new #win98taskbar, body.new #win98start { display: none !important; }
+body.old-device #win98taskbar, body.old-device #win98start { display: none !important; }
+
+/* start menu */
+body.og #win98start {
+  display: none; position: fixed; bottom: 36px; left: 0; z-index: 9001;
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff; border-left: 2px solid #ffffff;
+  border-right: 2px solid #808080; border-bottom: 2px solid #808080;
+  width: 180px;
+}
+body.og #win98start .sm-header {
+  background: linear-gradient(to top, #000080, #1084d0);
+  color: white; font-family: "MS Sans Serif", Arial, sans-serif;
+  font-size: 14px; font-weight: bold; padding: 6px 8px;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  height: 160px; letter-spacing: 2px; float: left;
+}
+body.og #win98start .sm-items { margin-left: 28px; }
+body.og #win98start .sm-item {
+  display: block; width: 100%; font-family: "MS Sans Serif", Arial, sans-serif;
+  font-size: 11px; color: black; background: transparent; border: none;
+  padding: 5px 8px; text-align: left; cursor: pointer;
+  border-bottom: 1px solid #a0a0a0;
+}
+body.og #win98start .sm-item:hover { background: #000080; color: white; }
+body.og #win98start.open { display: block; }
 
 /* dvd screensaver */
 #dvdOverlay {
@@ -325,41 +385,45 @@ body.new .news-post-tag {
   padding: 0.15rem 0.5rem; margin-right: 0.4rem; display: inline-block; margin-bottom: 0.8rem;
 }
 body.og #nav-news { font-weight: bold; color: red; }
-body.og .news-post { border: 2px solid black; padding: 4px; margin-bottom: 8px; }
+body.og .news-post { border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #808080; border-bottom: 2px solid #808080; background: #c0c0c0; padding: 4px; margin-bottom: 6px; }
 body.og .news-post-header { display: block; margin-bottom: 4px; border-bottom: 1px solid black; padding-bottom: 2px; }
-body.og .news-post-title { font-size: 1.1em; font-weight: bold; color: black; font-family: inherit; }
-body.og .news-post-date { font-size: 0.9em; color: black; font-family: inherit; }
-body.og .news-post-body { font-size: 1em; color: black; font-family: inherit; line-height: 1.5; }
+body.og .news-post-title { font-size: 11px; font-weight: bold; color: white; font-family: "MS Sans Serif", Arial, sans-serif; background: linear-gradient(to right,#000080,#1084d0); padding: 2px 4px; display: block; margin-bottom: 2px; }
+body.og .news-post-date { font-size: 10px; color: #444; font-family: "MS Sans Serif", Arial, sans-serif; }
+body.og .news-post-body { font-size: 11px; color: black; font-family: "MS Sans Serif", Arial, sans-serif; line-height: 1.5; background: white; border-top: 2px solid #808080; border-left: 2px solid #808080; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; padding: 4px; margin-top: 4px; }
 body.og .news-post-body p { margin-bottom: 6px; }
-body.og .news-post-tag { font-family: inherit; font-size: 0.9em; color: red; border: none; padding: 0; text-transform: none; letter-spacing: 0; display: inline; margin-right: 4px; }
+body.og .news-post-tag { font-family: "MS Sans Serif", Arial, sans-serif; font-size: 10px; color: navy; border: none; padding: 0; text-transform: none; letter-spacing: 0; display: inline; margin-right: 4px; }
 body.new .news-post-img { width: 100%; max-width: 500px; display: block; margin: 0.8rem 0 0.9rem; border: 1px solid #3a1a10; }
 body.og .news-post-img { width: 100%; max-width: 400px; display: block; margin: 4px 0 6px; border: 2px solid black; }
 
 /* OG */
-body.og { background: white; color: black; font-family: Times New Roman, serif; }
-body.og .site-wrap { padding: 8px; }
-body.og .site-header { margin-bottom: 0; border: none; padding-bottom: 0; }
-body.og .site-title { font-size: 2em; font-weight: bold; color: black; font-family: inherit; }
+body.og { background: #008080; color: black; font-family: "MS Sans Serif", Arial, sans-serif; font-size: 11px; }
+body.og .site-wrap { padding: 4px 4px 52px 4px; }
+body.og .site-header { margin-bottom: 4px; border: none; padding-bottom: 0; }
+body.og .site-title { font-size: 11px; font-weight: bold; color: white; font-family: inherit; background: linear-gradient(to right, #000080, #1084d0); padding: 3px 6px; display: inline-block; cursor: default; }
 body.og .site-tagline { display: none; }
-body.og nav { margin-bottom: 8px; gap: 0; }
+body.og nav { margin-bottom: 4px; gap: 2px; background: #c0c0c0; border: 2px inset #c0c0c0; padding: 2px; display: flex; flex-wrap: wrap; }
 body.og nav button {
-  font-family: inherit; font-size: 1em; background: buttonface; color: black;
-  border: 2px outset buttonface; padding: 2px 6px; cursor: pointer;
+  font-family: "MS Sans Serif", Arial, sans-serif; font-size: 11px; background: #c0c0c0; color: black;
+  border-top: 2px solid #ffffff; border-left: 2px solid #ffffff;
+  border-right: 2px solid #808080; border-bottom: 2px solid #808080;
+  padding: 2px 8px; cursor: pointer;
   letter-spacing: 0; text-transform: none; border-radius: 0; min-height: unset;
 }
-body.og nav button:hover, body.og nav button.active { background: buttonface; color: black; border: 2px outset buttonface; }
-body.og nav button:active { border: 2px inset buttonface; }
-body.og .page { display: none; }
+body.og nav button:hover { background: #d0d0d0; } body.og nav button.active { background: #c0c0c0; border-top: 2px solid #808080; border-left: 2px solid #808080; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; }
+body.og nav button:active { border-top: 2px solid #808080; border-left: 2px solid #808080; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; }
+body.og .page { display: none; background: #c0c0c0; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #808080; border-bottom: 2px solid #808080; padding: 4px; }
 body.og .page.visible { display: block; animation: none; }
 body.og .home-imgs { display: block; }
 body.og .home-imgs img { width: 200px; aspect-ratio: unset; height: auto; border: none; display: block; margin-bottom: 16px; object-fit: unset; }
 body.og .welcome-text { font-size: 1em; color: black; font-family: inherit; letter-spacing: 0; margin-bottom: 4px; }
-body.og h2 { font-size: 1.5em; color: black; font-weight: bold; margin-bottom: 8px; letter-spacing: 0; font-family: inherit; }
+body.og h2 { font-size: 11px; color: white; font-weight: bold; margin-bottom: 6px; letter-spacing: 0; font-family: "MS Sans Serif", Arial, sans-serif; background: linear-gradient(to right,#000080,#1084d0); padding: 3px 6px; }
 body.og input[type=text], body.og input[type=password] {
-  font-family: inherit; font-size: 1em; background: white; border: 1px solid black; color: black;
-  padding: 2px; max-width: unset; width: unset; display: inline; margin-bottom: 0; border-radius: 0;
+  font-family: "MS Sans Serif", Arial, sans-serif; font-size: 11px; background: white;
+  border-top: 2px solid #808080; border-left: 2px solid #808080;
+  border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff;
+  color: black; padding: 2px 4px; max-width: unset; width: 180px; display: block; margin-bottom: 4px; border-radius: 0;
 }
-body.og .login-btn { font-family: inherit; font-size: 1em; background: buttonface; color: black; border: 2px outset buttonface; padding: 2px 6px; cursor: pointer; border-radius: 0; margin-top: 0; min-height: unset; }
+body.og .login-btn { font-family: "MS Sans Serif", Arial, sans-serif; font-size: 11px; background: #c0c0c0; color: black; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #808080; border-bottom: 2px solid #808080; padding: 3px 12px; cursor: pointer; border-radius: 0; margin-top: 4px; min-height: unset; }
 body.og #result { margin-top: 8px; font-family: inherit; font-size: 1em; color: black; background: white; border: none; border-left: none; padding: 0; max-width: unset; display: none; white-space: pre-line; }
 body.og #result.shown { display: block; }
 body.og .vip-list li { font-family: inherit; font-size: 1em; color: black; border-bottom: none; padding: 0; gap: 0; }
@@ -375,7 +439,7 @@ body.og .leak-pw { font-family: inherit; font-size: 1em; color: black; letter-sp
 body.og .leak-pw::before { color: black; }
 body.og .leak-id { font-family: inherit; font-size: 1em; color: black; background: white; border: none; padding: 0; justify-self: start; }
 body.og .leak-id::before { color: black; }
-body.og .toggle-btn { font-family: inherit; font-size: 1em; background: buttonface; border: 2px outset buttonface; color: black; padding: 2px 6px; cursor: pointer; margin-top: 8px; letter-spacing: 0; min-height: unset; }
+body.og .toggle-btn { font-family: "MS Sans Serif", Arial, sans-serif; font-size: 11px; background: #c0c0c0; border-top: 2px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #808080; border-bottom: 2px solid #808080; color: black; padding: 3px 12px; cursor: pointer; margin-top: 8px; letter-spacing: 0; min-height: unset; }
 
 /* ===== OLD DEVICE (3GS / iOS 3-6) ===== */
 body.old-device { background:#0d0b08 !important; color:#e8dcc8 !important; font-family:Georgia,serif !important; }
@@ -533,6 +597,196 @@ body.old-device #firstTodayBtn { font-family:monospace !important; font-size:0.7
 
   <div id="newsPage" class="page">
     <h2>News</h2>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">TED HAS DEPLOYED THE 4.7GB FILE. EA HQ LIGHTS WENT OUT FOR 11 SECONDS. COINCIDENCE UNDER INVESTIGATION.</span>
+        <span class="news-post-date">20 Mar 2026 — 19:30</span>
+      </div>
+      <span class="news-post-tag">breaking</span><span class="news-post-tag">ted</span><span class="news-post-tag">war</span>
+      <div class="news-post-body">
+        <p>At 19:14 this evening, Ted opened his laptop, unzipped the 4.7GB file, and ran it. He will not say what it does. He will not say where it went. He closed the laptop again and said "give it a minute." Eleven seconds later, every light in EA HQ went dark according to scouts monitoring the building from a distance. They were dark for exactly eleven seconds and then came back on.</p>
+        <p>EA's internal systems reportedly experienced what their IT department described as "an unexpected interruption." Ted has been asked seventeen times what was in the file. He says "it's fine" and offers no elaboration. His expression throughout has been described as "calm in a way that is somehow loud."</p>
+        <p>Flea Police have noted the incident in the war crimes file. Not against Ted. Just as a record. They seem pleased. Hornet watched the whole thing from across the room. When the lights went out she said nothing. When they came back on she nodded once. This is the most she has visibly reacted to anything Ted has done.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">GRUB FOUND AT 4,744 METRES. HE WAS IN A JAR. HE IS OKAY NOW. THE JAR IS NOT.</span>
+        <span class="news-post-date">20 Mar 2026 — 18:30</span>
+      </div>
+      <span class="news-post-tag">breaking</span><span class="news-post-tag">grub</span><span class="news-post-tag">good news</span><span class="news-post-tag">rescue</span>
+      <div class="news-post-body">
+        <img src="grub.jpg" class="news-post-img" alt="The grub. Out of the jar. Looking at you.">
+        <p>Grub. Found. Distressed but okay.</p>
+        <p>During planned expansion works on the La Flea bunker at approximately 18:00 today, excavation crews broke through a previously unknown chamber at 4,744 metres depth. Inside, they found a Grub. He was sealed inside a large glass jar. He was visibly distressed. He is out of the jar now.</p>
+        <p>The jar was intact when found — no cracks, no label, no explanation of how it got there or how long he had been inside. The glass was old. The Grub was not happy. Crews report he made a sound when the jar was opened. Everyone present agrees it was a very sad sound and that nobody is going to forget it.</p>
+        <p>The Grub has been brought up to level 7 and introduced to the beastling. The beastling looked at him for a while. The Grub looked back. Nobody is sure what this means but it seemed okay. Hornet saw the Grub and went very still for a moment in the way she goes still when something matters. She did not say anything. She sat nearby.</p>
+        <p>Excavation crews are now checking whether there are more jars. The thought that there might be more jars is not a comfortable one. The tunnel at 4,744 metres has been marked as a priority search zone. Nobody is going home until the whole depth has been checked.</p>
+        <p>The jar has been confiscated by Flea Police as evidence. There is now red string connecting it to EA on the war crimes board. This has not been confirmed. It has also not been ruled out. The Grub is safe. He has been given something to eat. He is on level 7. The beastling is next to him. This is the most important thing.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA SENDS NEGOTIATOR. NEGOTIATOR IS A FLEA IN A SUIT. THE SUIT IS TINY. THIS IS NOT A JOKE.</span>
+        <span class="news-post-date">20 Mar 2026 — 18:00</span>
+      </div>
+      <span class="news-post-tag">war</span><span class="news-post-tag">ea</span><span class="news-post-tag">diplomacy</span>
+      <div class="news-post-body">
+        <p>EA has dispatched a formal negotiator to the bunker entrance. The negotiator is a flea. It is wearing a very small suit. The suit has a tiny briefcase containing, according to the negotiator, "a revised peace framework and several EA Play promotional codes."</p>
+        <p>La Flea leadership met the negotiator at the west entrance at 17:45. The negotiator introduced itself as "Gerald, Head of Community Relations, EA EMEA." Gerald straightened his tiny tie. Gerald was offered a seat. Gerald sat down.</p>
+        <p>The revised peace framework is largely identical to the leaflet that Flea Police arrested earlier. There is a new clause offering La Flea a "Founding Member" badge on EA's community platform. The badge is not transferable. It does not do anything. It expires after one year at which point you must resubscribe at full price to keep the badge that does not do anything.</p>
+        <p>Negotiations are ongoing. Gerald is still here. He has been given bread from the canteen because it felt wrong not to. He seems to be enjoying it. La Flea has not agreed to anything. Gerald has a very small tie.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">WAR CRIMES BOARD UPDATE: 34 Items. New Section Added For Scientific Destruction. Ted Made A Key.</span>
+        <span class="news-post-date">20 Mar 2026 — 16:45</span>
+      </div>
+      <span class="news-post-tag">war</span><span class="news-post-tag">flea police</span><span class="news-post-tag">evidence</span>
+      <div class="news-post-body">
+        <p>Following the bombing of Test Chamber II, Detective Inspector Flea has updated the war crimes board on level 4. The board now has 34 items connected by red string, up from 32. A new section has been added in the top-right corner labelled "Scientific Destruction" with two entries: Chamber I and Chamber II, both marked in red.</p>
+        <p>Ted has produced a handwritten key explaining the colour-coding system: red for confirmed EA actions, yellow for suspected, orange for "definitely them but we can't prove it yet," and blue for "this one is just upsetting." There are six blue items. Ted has not elaborated on the blue items. DI Flea says the key is procedurally helpful.</p>
+        <p>The grub jar has been added to the board under a new sub-heading: "Affected Citizens." The beastling already had an entry there. They are now side by side on the board. Someone has drawn a small line connecting them. Nobody has admitted to drawing the line.</p>
+        <p>The full board will be presented as evidence in the formal war crimes case. Ted has also made a second copy taped inside his jacket next to the hard drive.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">BEASTLING UPDATE: It Has Learned To Climb The Stairs. Level 6 Has Been Reached. Level 7 Is Home Base.</span>
+        <span class="news-post-date">20 Mar 2026 — 16:45</span>
+      </div>
+      <span class="news-post-tag">beastling</span><span class="news-post-tag">good news</span>
+      <div class="news-post-body">
+        <p>The beastling has learned to navigate the stairs between levels 6 and 7. It was observed this afternoon making the descent independently, pausing on each step briefly, and then continuing. It reached level 6, looked around, decided level 6 was fine but not as good as level 7, and climbed back up. The whole journey took four minutes.</p>
+        <p>Bunker residents on level 6 report the visit was "very good actually" and that the beastling paused next to the evidence board for a moment and appeared to study it. Flea Police have added this to the case file under "additional witness: beastling." The DI confirmed this was procedurally valid when asked.</p>
+        <p>The beastling is back on level 7. It is next to the warm laptop. It seems satisfied with the stairs situation and may do it again tomorrow.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA BOMBS LA FLEA TEST CHAMBER II. THE RESULTS ARE GONE. SCIENCE IS DEAD.</span>
+        <span class="news-post-date">20 Mar 2026 — 16:10</span>
+      </div>
+      <span class="news-post-tag">breaking</span><span class="news-post-tag">war</span><span class="news-post-tag">ea</span>
+      <div class="news-post-body">
+        <p>EA has struck again. At approximately 15:40 today, an airstrike was confirmed on La Flea Test Chamber II. The chamber has been destroyed. Every experiment running inside it has been lost. Three months of scientific work. Gone.</p>
+        <p>Test Chamber II was home to a long-running study into flea jumping biomechanics, an atmospheric pressure test that was three weeks from completion, and a prototype flea-sized portal device that Ted had been quietly building in the corner since January and had not told anyone about. The portal device was not finished. It will never be finished now.</p>
+        <p>La Flea's chief scientist issued a statement consisting entirely of silence followed by sitting down very slowly. The statement was understood. All data has been backed up to a hard drive physically taped to Ted in the bunker. If EA wants the data now they will have to go through Ted, which they are welcome to try.</p>
+        <p>EA has not claimed responsibility. EA never claims responsibility. The bomb had the EA logo on it.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA RELEASES STATEMENT ABOUT THE BOMBINGS. STATEMENT DOES NOT MENTION THE BOMBINGS.</span>
+        <span class="news-post-date">20 Mar 2026 — 15:30</span>
+      </div>
+      <span class="news-post-tag">ea</span><span class="news-post-tag">evil</span><span class="news-post-tag">pr</span>
+      <div class="news-post-body">
+        <p>EA has released a 300-word statement today. La Flea has read it in full. The word "bomb" does not appear. The words "test chamber" do not appear. The words "science," "explosion," "destroyed," or "sorry" do not appear. The phrase "our ongoing commitment to the community" appears three times.</p>
+        <p>The statement focuses primarily on an upcoming EA Play sale and a new feature that allows players to customise the colour of a loading screen for £1.49. The statement ends with "EA: For the Players." It is not clear which players. Not us.</p>
+        <p>La Flea has responded with a link to the Flea Police war crimes investigation page. The investigation page currently has 31 items on it. One of them is Gerald the negotiator's business card. It is very small.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">CONFIRMED: EA Struck Test Chamber I. The Vending Machine Is Gone. It Will Be Remembered.</span>
+        <span class="news-post-date">20 Mar 2026 — 14:55</span>
+      </div>
+      <span class="news-post-tag">war</span><span class="news-post-tag">ea</span><span class="news-post-tag">confirmed</span>
+      <div class="news-post-body">
+        <p>Satellite imagery has confirmed: the damage to Test Chamber I was not a structural failure. It was an EA strike. The crater pattern, the scorch marks, and the EA-branded debris found 40 metres from the blast site are consistent with a directed airstrike. It was EA.</p>
+        <p>Test Chamber I's eastern wall took the worst of it. The flea endurance track is destroyed. Two observation stations are gone. The vending machine — the one that sold small seeds, had a picture of a flea on it, and cost 20p per item — is gone. La Flea News has received more messages about the vending machine than about any other aspect of the bombing. It was genuinely a good vending machine. Its loss is noted.</p>
+        <p>This has been a coordinated campaign to destroy La Flea's scientific infrastructure from the start. EA can bomb the chambers but they cannot bomb the knowledge inside Ted's jacket.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">TED HAS FINISHED COMPILING. NOBODY KNOWS WHAT IT IS. IT IS RUNNING.</span>
+        <span class="news-post-date">20 Mar 2026 — 12:30</span>
+      </div>
+      <span class="news-post-tag">bunker</span><span class="news-post-tag">ted</span><span class="news-post-tag">developing</span>
+      <div class="news-post-body">
+        <p>After approximately 38 hours of continuous compilation, Ted's laptop has finished building whatever it was building. Ted has not explained what it is. He looked at the screen for a long moment, said "okay," and then closed the lid and put it under his jacket.</p>
+        <p>Sources inside the bunker report the file is approximately 4.7GB. That is a large file. Nobody has been told what is in it. Ted has been asked several times. He nods and says "yeah it's fine" which is not an answer.</p>
+        <p>Hornet glanced at the laptop when Ted put it away. She then looked at Ted for a moment longer than was neutral. This may or may not be significant. The laptop is still warm. The beastling is comfortable. No further information is available at this time.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">GORDON FREEMAN HAS MOVED. Ted Accidentally Bumped The Mouse. He Has Been Stationary Again For 40 Minutes.</span>
+        <span class="news-post-date">20 Mar 2026 — 11:20</span>
+      </div>
+      <span class="news-post-tag">bunker</span><span class="news-post-tag">half-life</span><span class="news-post-tag">ted</span>
+      <div class="news-post-body">
+        <p>Gordon Freeman moved briefly this morning when Ted accidentally knocked the mouse while reaching for bread. Gordon took approximately three steps, looked at a wall, and then Ted put the mouse back and Gordon stopped again. He has not moved since. It has been 40 minutes.</p>
+        <p>Several fleas on level 3 were reportedly startled by the notification. The situation was quickly confirmed stable. Ted has put a book under the mouse so it cannot be accidentally moved again. The book is the Arch Linux installation guide. Ted had it with him. Of course he did.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">FLEA POLICE ARREST EA LEAFLET. CHARGE: BEING INSULTING IN A CONFLICT ZONE.</span>
+        <span class="news-post-date">20 Mar 2026 — 10:15</span>
+      </div>
+      <span class="news-post-tag">flea police</span><span class="news-post-tag">war</span><span class="news-post-tag">law</span>
+      <div class="news-post-body">
+        <p>In a development described by legal observers as "unusual but valid," Flea Police have formally arrested one of the EA peace deal leaflets. The leaflet has been charged with being insulting in a conflict zone, distributing misleading information regarding subscription pricing, and littering.</p>
+        <p>The leaflet is currently being held in an evidence bag on level 4 next to the war crimes board. It has been assigned a case number. Detective Inspector Flea confirmed the arrest was procedurally correct and that the leaflet had been read its rights, which it did not respond to because it is a piece of paper.</p>
+        <p>When asked if arresting a leaflet would hold up in court, the DI said "we will get to that." The DI then went back into the boiler room.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">WHISTLEBLOWER INSIDE EA CONFIRMS: They Know The War Is Going Badly. They Are Having Meetings About The Meetings.</span>
+        <span class="news-post-date">20 Mar 2026 — 09:00</span>
+      </div>
+      <span class="news-post-tag">intel</span><span class="news-post-tag">ea</span><span class="news-post-tag">breaking</span>
+      <div class="news-post-body">
+        <p>The whistleblower who previously sent an internal memo and then had their EA Play subscription cancelled "as a courtesy" has made contact again. They are still inside EA. Morale at EA HQ is low.</p>
+        <p>EA leadership has held four meetings this week about the La Flea situation. Two of those meetings were to schedule the other two meetings. The outcome of all four was a decision to hold a fifth meeting. The fifth meeting has been scheduled for next Tuesday. An agenda has not been confirmed.</p>
+        <p>The source also confirms that nobody at EA can explain the 11-second power outage. Their IT team has filed it under "unexplained anomaly." Three people have been asked to write reports. None have been started. The reports are due Friday.</p>
+        <p>The source ended their message with "please tell the beastling it has a fan here." Message delivered. The beastling is unaware but we feel it would be pleased.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">MORALE REPORT: Everyone Is Doing Okay. The Beastling Had Breakfast. Half-Life 2 Is Still Running.</span>
+        <span class="news-post-date">20 Mar 2026 — 08:00</span>
+      </div>
+      <span class="news-post-tag">bunker</span><span class="news-post-tag">good news</span>
+      <div class="news-post-body">
+        <p>La Flea's daily morale report for 20 March 2026: overall morale is good. Heating is stable at 19°C. The beastling woke up, wandered around level 7 for a while, and ate something small. It seems unbothered by the war. Everyone finds this very comforting.</p>
+        <p>Half-Life 2 is still running on the desktop. Gordon Freeman has now been in the same room for over two days. Ted started a new playthrough this morning but has left the original one running on the second monitor because, in his words, "he's been there the whole war, it feels wrong to close it now." This is correct. Gordon stays.</p>
+        <p>The canteen on level 9 has introduced a new breakfast item. It is bread. It is good bread. Spirits are high regarding the bread. EA has been quiet since last night. This is not trusted. The east entrance is still watched. The beastling remains on level 7. Ted still has the data. La Flea is still here.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
     <button onclick="jumpToFirstToday()" id="firstTodayBtn" style="font-family:'Syne Mono',monospace;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;background:transparent;border:1px solid #3a2e1a;color:#a08060;padding:0.45rem 0.9rem;cursor:pointer;margin-bottom:1.2rem;transition:all 0.15s;min-height:40px;display:none;"></button>
     <div class="news-post">
       <div class="news-post-header">
@@ -1266,18 +1520,24 @@ document.addEventListener('mousemove', function(e) {
 
 function acceptCookies() {
   localStorage.setItem('laflea_cookies', 'yes');
-  document.getElementById('cookieBanner').style.display = 'none';
+  var b = document.getElementById('cookieBanner');
+  if (b) b.style.display = 'none';
 }
 function declineCookies() {
-  document.getElementById('cookieBanner').style.display = 'none';
+  var b = document.getElementById('cookieBanner');
+  if (b) b.style.display = 'none';
 }
 function toggleSuggestions() {
-  document.getElementById('suggestionsCorner').classList.toggle('open');
+  var s = document.getElementById('suggestionsCorner');
+  if (s) s.classList.toggle('open');
 }
 (function() {
-  if (localStorage.getItem('laflea_cookies')) {
-    document.getElementById('cookieBanner').style.display = 'none';
-  }
+  document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('laflea_cookies')) {
+      var b = document.getElementById('cookieBanner');
+      if (b) b.style.display = 'none';
+    }
+  });
 })();
 
 (function() {
@@ -1336,21 +1596,76 @@ function startDVD() {
 }
 
 function stopDVD() {
-  document.getElementById('dvdOverlay').style.display = 'none';
+  var o = document.getElementById('dvdOverlay');
+  var l = document.getElementById('dvdLogo');
+  if (o) o.style.display = 'none';
   if (dvdRAF) { cancelAnimationFrame(dvdRAF); dvdRAF = null; }
-  document.getElementById('dvdLogo').style.textShadow = 'none';
+  if (l) l.style.textShadow = 'none';
 }
+
+function updateWin98Clock() {
+  var el = document.getElementById('win98clock');
+  if (!el || !document.body.classList.contains('og')) return;
+  var d = new Date();
+  var h = d.getHours().toString().padStart(2,'0');
+  var m = d.getMinutes().toString().padStart(2,'0');
+  el.textContent = h + ':' + m;
+}
+setInterval(updateWin98Clock, 1000);
+updateWin98Clock();
+
+function toggleWin98Start() {
+  var sm = document.getElementById('win98start');
+  if (sm) sm.classList.toggle('open');
+}
+function closeWin98Start() {
+  var sm = document.getElementById('win98start');
+  if (sm) sm.classList.remove('open');
+}
+document.addEventListener('click', function(e) {
+  var sm = document.getElementById('win98start');
+  var sb = document.querySelector('#win98taskbar .tb-start');
+  if (sm && sb && !sm.contains(e.target) && !sb.contains(e.target)) {
+    sm.classList.remove('open');
+  }
+});
 
 function toggleLook() {
   isNew = !isNew;
   document.body.className = isNew ? 'new' : 'og';
   document.querySelector('.toggle-btn').textContent = isNew ? 'switch to og look' : 'switch to new look';
+  var tb = document.getElementById('win98taskbar');
+  var sm = document.getElementById('win98start');
+  if (tb) tb.style.display = isNew ? 'none' : 'flex';
+  if (sm) { sm.style.display = 'none'; sm.classList.remove('open'); }
+  if (!isNew) updateWin98Clock();
 }
 </script>
   <!-- dvd screensaver -->
   <div id="dvdOverlay" onclick="stopDVD()">
     <div class="dvd-logo" id="dvdLogo">La Flea</div>
     <div class="dvd-hint">click anywhere to exit</div>
+  </div>
+
+  <!-- Win98 taskbar -->
+  <div id="win98taskbar">
+    <button class="tb-start" onclick="toggleWin98Start()">&#128462; Start</button>
+    <div class="tb-divider"></div>
+    <button class="tb-window" onclick="showPage('home')">&#128196; La Flea Portal</button>
+    <span class="tb-clock" id="win98clock">00:00</span>
+  </div>
+  <div id="win98start">
+    <div class="sm-header">La Flea</div>
+    <div class="sm-items">
+      <button class="sm-item" onclick="showPage('home');closeWin98Start()">&#127968; Home</button>
+      <button class="sm-item" onclick="showPage('login');closeWin98Start()">&#128100; Log On</button>
+      <button class="sm-item" onclick="showPage('vips');closeWin98Start()">&#11088; VIPs</button>
+      <button class="sm-item" onclick="showPage('id');closeWin98Start()">&#127194; Get a ID</button>
+      <button class="sm-item" onclick="showPage('leaks');closeWin98Start()">&#128274; Leaks</button>
+      <button class="sm-item" onclick="showPage('news');closeWin98Start()">&#128240; News</button>
+      <button class="sm-item" onclick="showPage('eahl');closeWin98Start()">&#127918; !! EA HL !!</button>
+      <button class="sm-item" onclick="toggleLook();closeWin98Start()">&#128260; Switch Look</button>
+    </div>
   </div>
 
   <!-- cookie banner -->
