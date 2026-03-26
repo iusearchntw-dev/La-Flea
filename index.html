@@ -141,6 +141,9 @@ body.new .leak-id {
 }
 body.new .leak-id::before { content: 'id: '; color: #3a2e1a; }
 
+body.new #nav-watch { border-color: #5a1a1a; color: #c03030; }
+body.new #nav-watch:hover, body.new #nav-watch.active { background: #c03030; color: #fff; border-color: #c03030; }
+body.og #nav-watch { color: red; font-weight: bold; }
 body.new #nav-dev {
   border-color: #1a3a5a; color: #3a7aaa; font-size: 0.65rem;
 }
@@ -871,6 +874,7 @@ body.old-device #firstTodayBtn { font-family:monospace !important; font-size:0.7
     <button onclick="showPage('news')" id="nav-news">News<span class="news-dot"></span></button>
     <button onclick="showPage('eahl')" id="nav-eahl">!! EA HL !!</button>
     <button onclick="showPage('dev')" id="nav-dev">Dev</button>
+    <button onclick="showPage('watch')" id="nav-watch">Extras</button>
   </nav>
 
   <div id="homePage" class="page visible">
@@ -950,6 +954,78 @@ body.old-device #firstTodayBtn { font-family:monospace !important; font-size:0.7
 
   <div id="newsPage" class="page">
     <h2>News</h2>
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">HORNET UPDATE: SHE IS STABLE. SHE ATE SOMETHING. SHE TOLD THE MEDIC TO STOP FUSSING.</span>
+        <span class="news-post-date">22 Mar 2026 — 11:00</span>
+      </div>
+      <span class="news-post-tag">hornet</span><span class="news-post-tag">good news</span>
+      <div class="news-post-body">
+        <p>Hornet is stable. The wound is being treated. The medic reports she is recovering well and described her as "an extremely difficult patient in the sense that she keeps trying to get up and do things." She has been told to rest. She has rested for approximately 20 minutes at a time before attempting to stand up again. This is being managed.</p>
+        <p>At around 10:30 she asked for food. She was brought bread from the canteen and something warm to drink. She ate both. She did not say thank you but she also did not tell anyone to leave, which for Hornet is essentially the same thing.</p>
+        <p>The beastling is still next to her. It has not moved from her side since she came in. Hornet reached over at some point and rested a hand near it. Nobody made a big deal of this. Everyone noticed.</p>
+        <p>Ted has opened his laptop again. He is not compiling anything. He appears to be writing something. He has been writing it for about an hour. Nobody has asked what it is.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA'S DRILLING EQUIPMENT HAS BEEN FOUND. IT IS IN A LOT OF PIECES. FORENSICS ARE ONGOING.</span>
+        <span class="news-post-date">22 Mar 2026 — 10:15</span>
+      </div>
+      <span class="news-post-tag">war</span><span class="news-post-tag">ea</span><span class="news-post-tag">confirmed</span>
+      <div class="news-post-body">
+        <p>La Flea scouts have done a full sweep of the Phase 3 drilling site. The drilling equipment has been located. It is in several pieces. The pieces are spread across a fairly wide area. DI Flea's forensics team is on site cataloguing everything. Preliminary assessment: whatever stopped the drill did so decisively and did not stop to explain itself.</p>
+        <p>The EA operatives who were running the equipment are not at the site. There is no indication of where they went. Their equipment is there. Their packed lunches are still there. Their packed lunches suggest they were planning to be there a while. They were not there a while.</p>
+        <p>The drill component Hornet brought back has been formally entered into evidence as Exhibit 42. DI Flea has labelled it "proof of intent" in the war crimes case. This is a strong legal position. La Flea legal agrees it is a strong legal position. EA has not commented. EA's website is still partially down from Ted's file.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">DEREK HAS ASKED IF HE CAN STAY. LA FLEA IS CONSIDERING IT.</span>
+        <span class="news-post-date">22 Mar 2026 — 12:30</span>
+      </div>
+      <span class="news-post-tag">diplomacy</span><span class="news-post-tag">derek</span><span class="news-post-tag">developing</span>
+      <div class="news-post-body">
+        <p>Derek, the second Gerald, formally requested asylum in La Flea at 12:14 this afternoon. He submitted the request in writing, on a piece of paper from his briefcase, in a neat 11-point font. The request cites: the bread, the general atmosphere, the fact that the beastling walked past him this morning and did not seem bothered by him, and "a growing sense that EA is not going to win this and I would like to be on the right side of history."</p>
+        <p>Gerald has vouched for Derek. Gerald says Derek is "basically fine, just new." La Flea leadership is reviewing the application. The main concern is whether Derek is still reporting back to EA. Derek has surrendered his work phone. It had 47 unread emails from EA HR. He handed it over without hesitating. La Flea considers this a good sign.</p>
+        <p>A decision will be made by end of day. Derek has been given more bread while he waits. He seems comfortable. He has a very small tie, just like Gerald. They are sitting together now. It is quite a sight.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">EA HAS GONE QUIET AGAIN. THIS TIME IT FEELS DIFFERENT. TED SAYS IT FEELS DIFFERENT. TED IS USUALLY RIGHT.</span>
+        <span class="news-post-date">22 Mar 2026 — 14:00</span>
+      </div>
+      <span class="news-post-tag">war</span><span class="news-post-tag">ea</span><span class="news-post-tag">warning</span>
+      <div class="news-post-body">
+        <p>EA's perimeter units have gone quiet. Not retreated — they are still at 800m — but they have stopped moving entirely. No communications intercepts. No scout activity on their side. The Phase 3 drilling site is abandoned. The EA website has partially come back online but their internal systems are still showing errors according to the whistleblower, who checked in briefly at 13:30 to say "something is happening on this end and I don't know what it is."</p>
+        <p>Ted looked at his screens for a long time, stood up, walked to the evidence room, looked at the board, and said quietly: "this feels different." Ted has been right about EA movements before. He was right about the heating sabotage, right about the door code, and right that the 4.7GB file would do something significant. La Flea is taking "this feels different" seriously.</p>
+        <p>All bunker entrances are sealed. The beastling and the grub have been moved to level 9 as a precaution. Hornet tried to get up when she heard this. She was told to stay put. She stayed put but she does not look happy about it.</p>
+        <p>We are watching. We are ready. La Flea has been through everything EA has thrown at us and we are still here, 4,744 metres deep, warm, with bread, and with each other. That does not change.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
+    <div class="news-post">
+      <div class="news-post-header">
+        <span class="news-post-title">TED HAS DEPLOYED A THIRD FILE. SIZE UNKNOWN. HE JUST SMILED AND CLOSED THE LAPTOP.</span>
+        <span class="news-post-date">22 Mar 2026 — 15:30</span>
+      </div>
+      <span class="news-post-tag">breaking</span><span class="news-post-tag">ted</span><span class="news-post-tag">war</span>
+      <div class="news-post-body">
+        <p>At 15:22 Ted opened the laptop, typed for thirty-eight seconds, pressed enter, watched the screen for about ten seconds, and closed the laptop. When asked what size the file was, Ted said "doesn't matter." When asked where it went, Ted said "where it needed to go." When asked what it does, Ted smiled and did not say anything.</p>
+        <p>This is the first time Ted has smiled about any of this. La Flea is choosing to take this as a good sign. La Flea is also a little scared of Ted right now, in the specific way you are scared of someone who is completely calm during something that should not be calm about.</p>
+        <p>No external effects have been confirmed yet. The whistleblower has not checked in. The perimeter units are still stationary. DI Flea opened the boiler room door, looked at Ted, looked at the laptop, nodded once, and went back into the boiler room. The door closed quietly. For DI Flea, this is essentially a standing ovation.</p>
+        <p style="font-style:italic; color: #7a6a50;">— La Flea News Desk</p>
+      </div>
+    </div>
+
     <div class="news-post">
       <div class="news-post-header">
         <span class="news-post-title">HORNET HAS BEEN HURT. SHE IS ALIVE. SHE IS BACK IN THE BUNKER. DO NOT PANIC.</span>
@@ -2048,6 +2124,19 @@ If you refuse without payment: <span class="warning">ACCOUNT TERMINATED + POLICE
     </div>
   </div>
 
+  <div id="watchPage" class="page">
+    <h2>Extras</h2>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-top:1rem;border:1px solid #2a2010;">
+      <iframe
+        src="https://www.youtube.com/embed/C8a8D4-eJiI?si=tmHV1MrVIqvJQYyl"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
   <button class="toggle-btn" onclick="toggleLook()">switch to og look</button>
 
 </div>
@@ -2074,7 +2163,7 @@ try {
   var savedLook = localStorage.getItem('laflea_look');
   if (savedLook === 'og') { isNew = false; document.body.className = 'og'; }
 } catch(e){}
-var pages = ['home','login','vips','id','leaks','news','eahl','dev'];
+var pages = ['home','login','vips','id','leaks','news','eahl','dev','watch'];
 
 var leakUsers = {
   'freeman':   'Gordon Freeman.\nCitizen of La Flea.\nFavourite tool: crowbar',
@@ -2660,8 +2749,8 @@ function toggleLook() {
 
   <!-- suggestions corner -->
   <div class="suggestions-corner" id="suggestionsCorner">
-    <div class="suggestions-bubble">suggestions? ask ted</div>
-    <button onclick="toggleSuggestions()">suggestions</button>
+    <div class="suggestions-bubble">suggestions? ask ted or <a href="https://github.com/iusearchntw-dev/La-Flea/issues" target="_blank" style="color:#f5c842;text-decoration:none;">open an issue</a></div>
+    <button onclick="window.open('https://github.com/iusearchntw-dev/La-Flea/issues','_blank');toggleSuggestions()">suggestions</button>
   </div>
 
 </body>
